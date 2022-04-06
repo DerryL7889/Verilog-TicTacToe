@@ -21,9 +21,9 @@ module game(input rst, input button, input[8:0] switches, input[9:0] x, input[9:
 
 
     assign square = | render; 
-    assign highlight = ((render[0] & change[0]) | (render[1] & change[1]) | (render[2] & change[2]) |
-                        (render[3] & change[3]) | (render[4] & change[4]) | (render[5] & change[5]) |
-                        (render[6] & change[6]) | (render[7] & change[7]) | (render[8] & change[8]));
+    assign highlight = ((render[0] & switches[0]) | (render[1] & switches[1]) | (render[2] & switches[2]) |
+                        (render[3] & switches[3]) | (render[4] & switches[4]) | (render[5] & switches[5]) |
+                        (render[6] & switches[6]) | (render[7] & switches[7]) | (render[8] & switches[8]));
     assign mode = 2'b00;
     assign lx = 10'b0000000000;
     assign ly = 10'b0000000000;
