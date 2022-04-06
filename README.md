@@ -1,6 +1,7 @@
 # Verilog-TicTacToe
 
-Tic Tac Toe game written in verilog
+Tic Tac Toe game written in verilog.
+
 This is a Quartus Prime project designed for the DE10 Lite board
 
 notes to team:
