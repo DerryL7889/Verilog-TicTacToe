@@ -7,15 +7,41 @@ module renderer(input rst, input[9:0] x, input[9:0] y, input[9:0] lx, input[9:0]
         //display
         if(!blanking)begin
             if(render)begin
-                red = 4'b0000;
-                green = 4'b0000;
-                blue = 4'b0000;
+                if(mode == 2'b01)begin
+                    //x
+                    red = 4'b1111;
+                    green = 4'b0000;
+                    blue = 4'b0000;
+                end
+                else if(mode == 2'b10)begin
+                    //o
+                    red = 4'b0000;
+                    green = 4'b0000;
+                    blue = 4'b1111;
+                end
+					 else if(mode == 2'b00)begin
+                    //o
+                    red = 4'b0000;
+                    green = 4'b1111;
+                    blue = 4'b0000;
+                end
+					 else if(mode == 2'b11)begin
+                    //o
+                    red = 4'b1111;
+                    green = 4'b1111;
+                    blue = 4'b0000;
+                end
+                else begin
+                    red = 4'b0000;
+                    green = 4'b0000;
+                    blue = 4'b0000;
+                end
 
                 //highlight
                 if(highlight)begin
-                    red = red +  4'b1111;
-                    green = green + 4'b1111;
-                    blue = blue + 4'b1111;
+                    red = ~red;
+                    green = ~green;
+                    blue = ~blue;
                 end
             end
             else begin

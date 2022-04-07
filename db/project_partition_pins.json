@@ -4,6 +4,30 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "ssd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ssd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ssd[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ssd[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ssd[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ssd[6]",
+					"strict" : false
+				},
+				{
 					"name" : "rgb[0]",
 					"strict" : false
 				},
@@ -60,15 +84,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[2]",
-					"strict" : false
-				},
-				{
 					"name" : "switches[5]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[8]",
 					"strict" : false
 				},
 				{
@@ -84,6 +100,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "switches[2]",
+					"strict" : false
+				},
+				{
 					"name" : "switches[3]",
 					"strict" : false
 				},
@@ -93,6 +113,14 @@
 				},
 				{
 					"name" : "switches[4]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[8]",
+					"strict" : false
+				},
+				{
+					"name" : "button",
 					"strict" : false
 				},
 				{

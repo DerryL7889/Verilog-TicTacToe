@@ -10,14 +10,14 @@ switches[5] => switches[5].IN1
 switches[6] => switches[6].IN1
 switches[7] => switches[7].IN1
 switches[8] => switches[8].IN1
-clk => clk.IN1
-ssd[0] << <GND>
-ssd[1] << <GND>
-ssd[2] << <GND>
-ssd[3] << <GND>
-ssd[4] << <GND>
-ssd[5] << <GND>
-ssd[6] << <GND>
+clk => clk.IN2
+ssd[0] << SSDriver:ssd1.port2
+ssd[1] << SSDriver:ssd1.port2
+ssd[2] << SSDriver:ssd1.port2
+ssd[3] << SSDriver:ssd1.port2
+ssd[4] << SSDriver:ssd1.port2
+ssd[5] << SSDriver:ssd1.port2
+ssd[6] << SSDriver:ssd1.port2
 rgb[0] << renderer:r1.port9
 rgb[1] << renderer:r1.port9
 rgb[2] << renderer:r1.port9
@@ -69,8 +69,19 @@ cout <= cout~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|game:g1
+clk => ~NO_FANOUT~
 rst => rst.IN9
-button => ~NO_FANOUT~
+button => change.OUTPUTSELECT
+button => change.OUTPUTSELECT
+button => change.OUTPUTSELECT
+button => change.OUTPUTSELECT
+button => change.OUTPUTSELECT
+button => change.OUTPUTSELECT
+button => change.OUTPUTSELECT
+button => change.OUTPUTSELECT
+button => change.OUTPUTSELECT
+button => change[8].IN1
+button => state[1].IN1
 switches[0] => select[0].DATAB
 switches[0] => flag.DATAA
 switches[0] => flag.DATAB
@@ -137,11 +148,12 @@ ly[6] <= <GND>
 ly[7] <= <GND>
 ly[8] <= <GND>
 ly[9] <= <GND>
-mode[0] <= <GND>
-mode[1] <= <GND>
-square <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+mode[0] <= curr_mode.DB_MAX_OUTPUT_PORT_TYPE
+mode[1] <= curr_mode.DB_MAX_OUTPUT_PORT_TYPE
+square <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 highlight <= highlight.DB_MAX_OUTPUT_PORT_TYPE
-turn <= <GND>
+turn[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
+turn[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|game:g1|space:sq1
@@ -1512,6 +1524,63 @@ mode[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
 mode[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
+|top|SSDriver:ssd1
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN0
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN1
+a[3] => b.IN1
+a[2] => b.IN1
+a[2] => b.IN0
+a[2] => b.IN1
+a[2] => b.IN0
+a[2] => b.IN1
+a[2] => b.IN0
+a[2] => b.IN1
+a[2] => b.IN1
+a[2] => b.IN1
+a[2] => b.IN1
+a[2] => b.IN0
+a[1] => b.IN0
+a[1] => b.IN0
+a[1] => b.IN1
+a[1] => b.IN0
+a[1] => b.IN0
+a[1] => b.IN1
+a[0] => b.IN1
+a[0] => b.IN1
+a[0] => b.IN1
+a[0] => b.IN1
+a[0] => b.IN1
+a[0] => b.IN1
+a[0] => b.IN1
+enable => b.IN1
+enable => b.IN1
+enable => b.IN1
+enable => b.IN1
+enable => b.IN1
+enable => b.IN1
+enable => b.IN1
+b[6] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[5] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[4] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[3] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[2] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[1] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[0] <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |top|renderer:r1
 rst => ~NO_FANOUT~
 x[0] => ~NO_FANOUT~
@@ -1556,9 +1625,18 @@ ly[8] => ~NO_FANOUT~
 ly[9] => ~NO_FANOUT~
 render => red.OUTPUTSELECT
 render => red.OUTPUTSELECT
-mode => ~NO_FANOUT~
-highlight => red.DATAB
-highlight => red.DATAB
+render => green.OUTPUTSELECT
+render => green.OUTPUTSELECT
+render => blue.OUTPUTSELECT
+render => blue.OUTPUTSELECT
+mode => red.DATAA
+mode => green.DATAB
+mode => red.DATAB
+mode => green.DATAA
+highlight => red.OUTPUTSELECT
+highlight => green.OUTPUTSELECT
+highlight => blue.DATAB
+highlight => blue.DATAB
 blanking => red.OUTPUTSELECT
 blanking => red.OUTPUTSELECT
 blanking => red.OUTPUTSELECT

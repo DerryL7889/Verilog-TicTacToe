@@ -1,0 +1,24 @@
+module space(input[9:0] tlx, input [9:0] tly, input[9:0] brx, input[9:0] bry,
+    input rst, input change, input[9:0] x, input[9:0] y, input[1:0] nextmode,
+    output[9:0] lx, output[9:0] ly, output xyin, output[1:0] mode
+    );
+
+    
+    reg[1:0] state; //00 -> empty, 01 -> x, 10 -> o, 11 -> idk
+
+    always@(posedge change, negedge rst) begin
+        if(~rst)begin
+            state <= 2'b01;
+        end
+        else if(change) begin
+            state <= nextmode;
+        end
+
+    end
+
+    assign mode = state;
+    assign xyin = (x > tlx && x < brx && y > tly && y < bry) ? 1'b1 : 1'b0;
+    assign lx = x - tlx;
+    assign ly = y - tly;
+
+endmodule

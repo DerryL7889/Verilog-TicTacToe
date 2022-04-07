@@ -33,11 +33,11 @@ module vgaSync(input clk, input rst, output[9:0] x, output[9:0] y, output blank,
             if(hcounter >= 800)
             begin
                 hcounter <= 0;
-                vcounter <= vcounter +1;
+                vcounter <= vcounter + 10'd1;
             end
             else
 				begin
-                hcounter <= hcounter +1;
+                hcounter <= hcounter + 10'd1;
 					 if(vcounter >= 525)
 						 vcounter <= 0;
 				end
