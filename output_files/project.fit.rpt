@@ -1,5 +1,5 @@
 Fitter report for project
-Thu Apr 07 09:41:20 2022
+Thu Apr 07 10:31:48 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition
 
 
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                                 ;
 +------------------------------------+-----------------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Apr 07 09:41:20 2022                     ;
+; Fitter Status                      ; Successful - Thu Apr 07 10:31:48 2022                     ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition ;
 ; Revision Name                      ; project                                                   ;
 ; Top-level Entity Name              ; top                                                       ;
@@ -155,13 +155,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.05        ;
+; Average used               ; 1.06        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.6%      ;
-;     Processors 3-4         ;   1.6%      ;
+;     Processor 2            ;   1.9%      ;
+;     Processors 3-4         ;   1.9%      ;
 +----------------------------+-------------+
 
 
@@ -1798,32 +1798,32 @@ Info (176353): Automatically promoted node vgaSync:vs1|clkdiv25:cd0|cout  File: 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node vgaSync:vs1|clkdiv25:cd0|cout~0 File: C:/Users/liude/projects/Git/Verilog-TicTacToe/vgaSync.v Line: 73
-Info (176353): Automatically promoted node game:g1|msclock:cl1|cout  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 136
+Info (176353): Automatically promoted node game:g1|msclock:cl1|cout  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 117
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node game:g1|msclock:cl1|cout~0 File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 136
-Info (176353): Automatically promoted node game:g1|change[0]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 74
+        Info (176357): Destination node game:g1|msclock:cl1|cout~0 File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 117
+Info (176353): Automatically promoted node game:g1|change[0]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 55
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node game:g1|change[1]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 74
+Info (176353): Automatically promoted node game:g1|change[1]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 55
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node game:g1|change[2]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 74
+Info (176353): Automatically promoted node game:g1|change[2]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 55
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node game:g1|change[3]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 74
+Info (176353): Automatically promoted node game:g1|change[3]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 55
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node game:g1|change[4]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 74
+Info (176353): Automatically promoted node game:g1|change[4]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 55
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node game:g1|change[5]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 74
+Info (176353): Automatically promoted node game:g1|change[5]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 55
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node game:g1|change[6]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 74
+Info (176353): Automatically promoted node game:g1|change[6]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 55
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node game:g1|change[7]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 74
+Info (176353): Automatically promoted node game:g1|change[7]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 55
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node game:g1|change[8]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 74
+Info (176353): Automatically promoted node game:g1|change[8]  File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 55
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1836,7 +1836,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
-Info (11888): Total time spent on timing analysis during the Fitter is 0.78 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.67 seconds.
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 10M50DAF484C6GES are preliminary
 Info (334004): Delay annotation completed successfully
@@ -1847,10 +1847,10 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/liude/projects/Git/Verilog-TicTacToe/output_files/project.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5651 megabytes
-    Info: Processing ended: Thu Apr 07 09:41:21 2022
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 5647 megabytes
+    Info: Processing ended: Thu Apr 07 10:31:49 2022
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +----------------------------+

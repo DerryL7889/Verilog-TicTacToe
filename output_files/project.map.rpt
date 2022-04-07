@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project
-Thu Apr 07 09:41:03 2022
+Thu Apr 07 10:31:31 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition
 
 
@@ -57,7 +57,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                   ;
 +------------------------------------+-----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 07 09:41:03 2022                     ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 07 10:31:31 2022                     ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition ;
 ; Revision Name                      ; project                                                   ;
 ; Top-level Entity Name              ; top                                                       ;
@@ -310,271 +310,253 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game:g1|space:sq9"                                                                                                                                                                       ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tlx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tlx[8..7] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tlx[6..5] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[4]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tly[5..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[8]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly[7]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[6]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; brx[8..5] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[9]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx[4]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; bry[8..6] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry[5..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; lx        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-; ly        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game:g1|space:sq9"                                                                                                                                                                      ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tlx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tlx[8..7] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tlx[6..5] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[4]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tly[5..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly[7]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[6]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; brx[8..5] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[9]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx[4]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; bry[8..6] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry[5..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game:g1|space:sq8"                                                                                                                                                                       ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tlx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tlx[7..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[8]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tly[5..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[8]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly[7]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[6]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; brx[8..7] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx[6..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; bry[8..6] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry[5..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; lx        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-; ly        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game:g1|space:sq8"                                                                                                                                                                      ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tlx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tlx[7..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tly[5..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly[7]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[6]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; brx[8..7] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx[6..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; bry[8..6] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry[5..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game:g1|space:sq7"                                                                                                                                                                       ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tlx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tlx[6..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tlx[9..7] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tly[5..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[8]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly[7]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[6]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; brx[7..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx[9..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; bry[8..6] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry[5..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; lx        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-; ly        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game:g1|space:sq7"                                                                                                                                                                      ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tlx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tlx[6..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tlx[9..7] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tly[5..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly[7]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[6]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; brx[7..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx[9..8] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; bry[8..6] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry[5..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game:g1|space:sq6"                                                                                                                                                                       ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tlx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tlx[8..7] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tlx[6..5] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[4]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tly[5..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly[9..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[7]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly[6]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; brx[8..5] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[9]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx[4]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; bry[5..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry[7..6] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[8]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; lx        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-; ly        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game:g1|space:sq6"                                                                                                                                                                      ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tlx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tlx[8..7] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tlx[6..5] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[4]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tly[5..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly[9..8] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[7]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly[6]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; brx[8..5] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[9]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx[4]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; bry[5..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry[7..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game:g1|space:sq5"                                                                                                                                                                       ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tlx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tlx[7..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[8]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tly[5..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly[9..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[7]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly[6]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; brx[8..7] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx[6..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; bry[5..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry[7..6] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[8]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; lx        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-; ly        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game:g1|space:sq5"                                                                                                                                                                      ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tlx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tlx[7..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tly[5..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly[9..8] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[7]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly[6]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; brx[8..7] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx[6..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; bry[5..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry[7..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game:g1|space:sq4"                                                                                                                                                                       ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tlx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tlx[6..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tlx[9..7] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tly[5..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly[9..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[7]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly[6]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; brx[7..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx[9..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; bry[5..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry[7..6] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[8]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; lx        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-; ly        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game:g1|space:sq4"                                                                                                                                                                      ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tlx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tlx[6..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tlx[9..7] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tly[5..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly[9..8] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[7]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly[6]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; brx[7..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx[9..8] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; bry[5..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry[7..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game:g1|space:sq3"                                                                                                                                                                       ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tlx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tlx[8..7] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tlx[6..5] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[4]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tly[9..6] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[4..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[5]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; brx[8..5] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[9]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx[4]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; bry[9..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[4..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[7]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry[6]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[5]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; lx        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-; ly        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game:g1|space:sq3"                                                                                                                                                                      ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tlx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tlx[8..7] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tlx[6..5] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[4]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tly[9..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[4..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[5]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; brx[8..5] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[9]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx[4]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; bry[9..8] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[4..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[7]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry[6]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[5]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game:g1|space:sq2"                                                                                                                                                                       ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tlx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tlx[7..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[8]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tly       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tly[9..6] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[4..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[5]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; brx[8..7] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx[6..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[9]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; bry[9..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[4..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[7]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry[6]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[5]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; lx        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-; ly        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game:g1|space:sq2"                                                                                                                                                                      ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tlx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tlx[7..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tly       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tly[9..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[4..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[5]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; brx[8..7] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx[6..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; bry[9..8] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[4..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[7]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry[6]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[5]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game:g1|space:sq1"                                                                                                                                                                       ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tlx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tlx[6..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; tlx[9..7] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tlx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; tly[9..6] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[4..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; tly[5]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; brx[7..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; brx[9..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; brx[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; bry[9..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[4..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[7]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bry[6]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bry[5]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; lx        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-; ly        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                 ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game:g1|space:sq1"                                                                                                                                                                      ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tlx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tlx[6..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; tlx[9..7] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tlx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; tly[9..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[4..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; tly[5]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; brx[7..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; brx[9..8] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; brx[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; bry[9..8] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[4..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[7]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; bry[6]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; bry[5]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -620,7 +602,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition
-    Info: Processing started: Thu Apr 07 09:40:48 2022
+    Info: Processing started: Thu Apr 07 10:31:16 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project -c project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -637,25 +619,48 @@ Info (12021): Found 1 design units, including 1 entities, in source file rendere
     Info (12023): Found entity 1: renderer File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 1
 Info (12021): Found 2 design units, including 2 entities, in source file game.v
     Info (12023): Found entity 1: game File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 1
-    Info (12023): Found entity 2: msclock File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 136
+    Info (12023): Found entity 2: msclock File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 117
 Info (12127): Elaborating entity "top" for the top level hierarchy
 Info (12128): Elaborating entity "vgaSync" for hierarchy "vgaSync:vs1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 9
 Info (12128): Elaborating entity "clkdiv25" for hierarchy "vgaSync:vs1|clkdiv25:cd0" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/vgaSync.v Line: 18
 Info (12128): Elaborating entity "game" for hierarchy "game:g1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 12
-Warning (10235): Verilog HDL Always Construct warning at game.v(39): variable "modes" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
-Info (12128): Elaborating entity "msclock" for hierarchy "game:g1|msclock:cl1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 109
-Info (12128): Elaborating entity "space" for hierarchy "game:g1|space:sq1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 111
+Warning (10235): Verilog HDL Always Construct warning at game.v(39): variable "render" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Warning (10235): Verilog HDL Always Construct warning at game.v(40): variable "modes" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 40
+Warning (10240): Verilog HDL Always Construct warning at game.v(36): inferring latch(es) for variable "curr_lx", which holds its previous value in one or more paths through the always construct File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 36
+Warning (10240): Verilog HDL Always Construct warning at game.v(36): inferring latch(es) for variable "curr_ly", which holds its previous value in one or more paths through the always construct File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 36
+Info (10041): Inferred latch for "curr_ly[0]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_ly[1]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_ly[2]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_ly[3]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_ly[4]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_ly[5]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_ly[6]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_ly[7]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_ly[8]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_ly[9]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_lx[0]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_lx[1]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_lx[2]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_lx[3]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_lx[4]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_lx[5]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_lx[6]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_lx[7]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_lx[8]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (10041): Inferred latch for "curr_lx[9]" at game.v(39) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (12128): Elaborating entity "msclock" for hierarchy "game:g1|msclock:cl1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 90
+Info (12128): Elaborating entity "space" for hierarchy "game:g1|space:sq1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 92
 Info (12128): Elaborating entity "SSDriver" for hierarchy "SSDriver:ssd1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 13
 Info (12128): Elaborating entity "renderer" for hierarchy "renderer:r1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 16
-Warning (10235): Verilog HDL Always Construct warning at renderer.v(8): variable "blanking" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 8
-Warning (10235): Verilog HDL Always Construct warning at renderer.v(9): variable "render" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 9
-Warning (10235): Verilog HDL Always Construct warning at renderer.v(10): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 10
-Warning (10235): Verilog HDL Always Construct warning at renderer.v(16): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 16
-Warning (10235): Verilog HDL Always Construct warning at renderer.v(22): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 22
-Warning (10235): Verilog HDL Always Construct warning at renderer.v(28): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 28
-Warning (10235): Verilog HDL Always Construct warning at renderer.v(41): variable "highlight" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 41
+Warning (10235): Verilog HDL Always Construct warning at renderer.v(7): variable "blanking" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 7
+Warning (10235): Verilog HDL Always Construct warning at renderer.v(8): variable "render" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 8
+Warning (10235): Verilog HDL Always Construct warning at renderer.v(9): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 9
+Warning (10235): Verilog HDL Always Construct warning at renderer.v(15): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 15
+Warning (10235): Verilog HDL Always Construct warning at renderer.v(21): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 21
+Warning (10235): Verilog HDL Always Construct warning at renderer.v(27): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 27
+Warning (10235): Verilog HDL Always Construct warning at renderer.v(40): variable "highlight" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 40
 Warning (12241): 10 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 74
+Info (13000): Registers with preset signals will power-up high File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 55
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ssd[5]" is stuck at GND File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 2
@@ -667,11 +672,11 @@ Info (21057): Implemented 231 device resources after synthesis - the final resou
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 21 output pins
     Info (21061): Implemented 198 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4779 megabytes
-    Info: Processing ended: Thu Apr 07 09:41:03 2022
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4781 megabytes
+    Info: Processing ended: Thu Apr 07 10:31:31 2022
     Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+

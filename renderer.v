@@ -1,5 +1,4 @@
 module renderer(input rst, input[9:0] x, input[9:0] y, input[9:0] lx, input[9:0] ly, input render, input[1:0] mode, input highlight, input blanking, output[11:0] rgb);
-//right now just black if on square, gray if on border, and black if on blanking interval
 
     reg[3:0] red, blue, green;
 
@@ -20,13 +19,13 @@ module renderer(input rst, input[9:0] x, input[9:0] y, input[9:0] lx, input[9:0]
                     blue = 4'b1111;
                 end
 					 else if(mode == 2'b00)begin
-                    //o
+                    //blank
                     red = 4'b0000;
                     green = 4'b0000;
                     blue = 4'b0000;
                 end
 					 else if(mode == 2'b11)begin
-                    //o
+                    //invalid
                     red = 4'b0000;
                     green = 4'b1111;
                     blue = 4'b0000;
@@ -42,6 +41,9 @@ module renderer(input rst, input[9:0] x, input[9:0] y, input[9:0] lx, input[9:0]
                     red = ~red;
                     green = ~green;
                     blue = ~blue;
+//							red = lx/8;
+//							green = ly/8;
+//							blue = 4'b0000;
                 end
             end
             else begin

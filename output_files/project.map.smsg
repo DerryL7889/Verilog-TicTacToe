@@ -1,2 +1,2 @@
 Warning (10268): Verilog HDL information at vgaSync.v(20): always construct contains both blocking and non-blocking assignments File: C:/Users/liude/projects/Git/Verilog-TicTacToe/vgaSync.v Line: 20
-Warning (10268): Verilog HDL information at game.v(66): always construct contains both blocking and non-blocking assignments File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 66
+Warning (10268): Verilog HDL information at game.v(47): always construct contains both blocking and non-blocking assignments File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 47

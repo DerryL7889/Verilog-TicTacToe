@@ -4,10 +4,11 @@ module game(input clk, input rst, input button, input[8:0] switches, input[9:0] 
     reg sig, valid;
 	reg [1:0] state, flag, curr_mode;
     reg [8:0] select, change;
-	 wire clock;
+    reg [9:0] curr_lx, curr_ly;
+	wire clock;
     wire[8:0] render;
-    wire[9:0] lx1, lx2, lx3, lx4, lx5, lx6, lx7, lx8, lx9;
-    wire[9:0] ly1, ly2, ly3, ly4, ly5, ly6, ly7, ly8, ly9;
+    wire[9:0] lx_arr[8:0];
+    wire[9:0] ly_arr[8:0];
     wire[17:0] modes;
     integer i;
 	 
@@ -32,21 +33,23 @@ module game(input clk, input rst, input button, input[8:0] switches, input[9:0] 
         end
     end
 
- 	always@(render) begin
- 	curr_mode = 2'b00;
- 		for(i=0; i<9; i=i+1) begin
- 			if(render[i])begin
- 				curr_mode = {modes[2*i + 1],modes[2*i]};
- 			end
- 		end
- 	end
+    always@(x,y) begin
+    curr_mode = 2'b00;
+        for(i=0; i<9; i=i+1) begin
+            if(render[i])begin
+                curr_mode = {modes[2*i + 1],modes[2*i]};
+                curr_lx = lx_arr[i];
+                curr_ly = ly_arr[i];
+            end
+        end
+    end
 	 
     always@(posedge clock, negedge rst) begin
         if(~rst)begin
             //reset
             sig <= 1'b0;
             state <= 2'b01; //player 1 is x
-				valid <= 1'b1;
+            valid <= 1'b1;
             change <= 9'b000000000;
         end 
         else if(~button & ~sig) begin
@@ -54,49 +57,49 @@ module game(input clk, input rst, input button, input[8:0] switches, input[9:0] 
             sig <= 1'b1;
             if(|select) begin
             //check if valid move
-					valid = 1'b0;
-					for(i=0; i<9; i=i+1) begin
-						if(select[i] & ({modes[2*i + 1],modes[2*i]} === 2'b00)) begin
-							valid = 1'b1;
-						end
-					end
-					
-					if(valid) begin
-					//place marker
-						 change = select;
-					 end
+                valid = 1'b0;
+                for(i=0; i<9; i=i+1) begin
+                    if(select[i] & ({modes[2*i + 1],modes[2*i]} === 2'b00)) begin
+                        valid = 1'b1;
+                    end
+                end
+                
+                if(valid) begin
+                //place marker
+                        change = select;
+                    end
             end
         end
         else if(button & sig) begin
             sig <= 1'b0;
             change <= 9'b000000000;
-				if(valid) begin
-						//TODO: check for win
-						//pass turn
-						 if(state == 2'b01) begin
-							  state <= 2'b10;
-						 end
-						 else if(state == 2'b10) begin
-							  state <= 2'b01;
-						 end
-						 valid <= 1'b0;
-				end
+            if(valid) begin
+                    //TODO: check for win
+                    //pass turn
+                        if(state == 2'b01) begin
+                        state <= 2'b10;
+                    end
+                    else if(state == 2'b10) begin
+                        state <= 2'b01;
+                    end
+                    valid <= 1'b0;
+            end
         end
     end
 	
 	msclock cl1(clk, clock);
 	
-    space sq1(112,32,240,160, rst, change[0], x, y, state, lx1, ly1, render[0], modes[1:0]);
-    space sq2(256,32,384,160, rst, change[1], x, y, state, lx2, ly2, render[1], modes[3:2]);
-    space sq3(400,32,528,160, rst, change[2], x, y, state, lx3, ly3, render[2], modes[5:4]);
+    space sq1(112,32,240,160, rst, change[0], x, y, state, lx_arr[0], ly_arr[0], render[0], modes[1:0]);
+    space sq2(256,32,384,160, rst, change[1], x, y, state, lx_arr[1], ly_arr[1], render[1], modes[3:2]);
+    space sq3(400,32,528,160, rst, change[2], x, y, state, lx_arr[2], ly_arr[2], render[2], modes[5:4]);
 
-    space sq4(112,176,240,304, rst, change[3], x, y, state, lx4, ly4, render[3], modes[7:6]);
-    space sq5(256,176,384,304, rst, change[4], x, y, state, lx5, ly5, render[4], modes[9:8]);
-    space sq6(400,176,528,304, rst, change[5], x, y, state, lx6, ly6, render[5], modes[11:10]);
+    space sq4(112,176,240,304, rst, change[3], x, y, state, lx_arr[3], ly_arr[3], render[3], modes[7:6]);
+    space sq5(256,176,384,304, rst, change[4], x, y, state, lx_arr[4], ly_arr[4], render[4], modes[9:8]);
+    space sq6(400,176,528,304, rst, change[5], x, y, state, lx_arr[5], ly_arr[5], render[5], modes[11:10]);
 
-    space sq7(112,320,240,448, rst, change[6], x, y, state, lx7, ly7, render[6], modes[13:12]);
-    space sq8(256,320,384,448, rst, change[7], x, y, state, lx8, ly8, render[7], modes[15:14]);
-    space sq9(400,320,528,448, rst, change[8], x, y, state, lx9, ly9, render[8], modes[17:16]);
+    space sq7(112,320,240,448, rst, change[6], x, y, state, lx_arr[6], ly_arr[6], render[6], modes[13:12]);
+    space sq8(256,320,384,448, rst, change[7], x, y, state, lx_arr[7], ly_arr[7], render[7], modes[15:14]);
+    space sq9(400,320,528,448, rst, change[8], x, y, state, lx_arr[8], ly_arr[8], render[8], modes[17:16]);
 
 
     assign square = | render; 
@@ -104,8 +107,8 @@ module game(input clk, input rst, input button, input[8:0] switches, input[9:0] 
                         (render[3] & select[3]) | (render[4] & select[4]) | (render[5] & select[5]) |
                         (render[6] & select[6]) | (render[7] & select[7]) | (render[8] & select[8]));
     assign mode = curr_mode;
-    assign lx = 10'b0000000000;
-    assign ly = 10'b0000000000;
+    assign lx = curr_lx;
+    assign ly = curr_ly;
     assign turn = state;
 
 
