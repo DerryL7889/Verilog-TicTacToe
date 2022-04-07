@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project
-Wed Apr 06 20:21:45 2022
+Wed Apr 06 21:17:47 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition
 
 
@@ -56,13 +56,13 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                   ;
 +------------------------------------+-----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 06 20:21:44 2022                     ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 06 21:17:47 2022                     ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition ;
 ; Revision Name                      ; project                                                   ;
 ; Top-level Entity Name              ; top                                                       ;
 ; Family                             ; MAX 10                                                    ;
-; Total logic elements               ; 64                                                        ;
-;     Total combinational functions  ; 64                                                        ;
+; Total logic elements               ; 71                                                        ;
+;     Total combinational functions  ; 71                                                        ;
 ;     Dedicated logic registers      ; 24                                                        ;
 ; Total registers                    ; 24                                                        ;
 ; Total pins                         ; 33                                                        ;
@@ -196,16 +196,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------------------+
 ; Resource                                    ; Usage                         ;
 +---------------------------------------------+-------------------------------+
-; Estimated Total logic elements              ; 64                            ;
+; Estimated Total logic elements              ; 71                            ;
 ;                                             ;                               ;
-; Total combinational functions               ; 64                            ;
+; Total combinational functions               ; 71                            ;
 ; Logic element usage by number of LUT inputs ;                               ;
-;     -- 4 input functions                    ; 31                            ;
-;     -- 3 input functions                    ; 7                             ;
-;     -- <=2 input functions                  ; 26                            ;
+;     -- 4 input functions                    ; 36                            ;
+;     -- 3 input functions                    ; 10                            ;
+;     -- <=2 input functions                  ; 25                            ;
 ;                                             ;                               ;
 ; Logic elements by mode                      ;                               ;
-;     -- normal mode                          ; 46                            ;
+;     -- normal mode                          ; 53                            ;
 ;     -- arithmetic mode                      ; 18                            ;
 ;                                             ;                               ;
 ; Total registers                             ; 24                            ;
@@ -218,8 +218,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                               ;
 ; Maximum fan-out node                        ; vgaSync:vs1|clkdiv25:cd0|cout ;
 ; Maximum fan-out                             ; 24                            ;
-; Total fan-out                               ; 343                           ;
-; Average fan-out                             ; 2.23                          ;
+; Total fan-out                               ; 370                           ;
+; Average fan-out                             ; 2.30                          ;
 +---------------------------------------------+-------------------------------+
 
 
@@ -228,8 +228,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name           ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------+-------------+--------------+
-; |top                       ; 64 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 33   ; 0            ; 0          ; |top                          ; top         ; work         ;
-;    |game:g1|               ; 29 (22)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1                  ; game        ; work         ;
+; |top                       ; 71 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 33   ; 0            ; 0          ; |top                          ; top         ; work         ;
+;    |game:g1|               ; 36 (29)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1                  ; game        ; work         ;
 ;       |space:sq1|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq1        ; space       ; work         ;
 ;       |space:sq2|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq2        ; space       ; work         ;
 ;       |space:sq3|          ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq3        ; space       ; work         ;
@@ -261,7 +261,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|vgaSync:vs1|vcounter[9] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|vgaSync:vs1|vcounter[0] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|renderer:r1|rgb[0]      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
 
@@ -581,18 +581,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;     CLR SCLR          ; 10                          ;
 ;     ENA CLR SCLR      ; 10                          ;
 ;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 65                          ;
+; cycloneiii_lcell_comb ; 72                          ;
 ;     arith             ; 18                          ;
 ;         2 data inputs ; 18                          ;
-;     normal            ; 47                          ;
+;     normal            ; 54                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 31                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 36                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.80                        ;
+; Average LUT depth     ; 4.01                        ;
 +-----------------------+-----------------------------+
 
 
@@ -611,7 +611,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition
-    Info: Processing started: Wed Apr 06 20:21:29 2022
+    Info: Processing started: Wed Apr 06 21:17:32 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project -c project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -636,8 +636,8 @@ Warning (10230): Verilog HDL assignment warning at vgaSync.v(36): truncated valu
 Warning (10230): Verilog HDL assignment warning at vgaSync.v(40): truncated value with size 32 to match size of target (10) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/vgaSync.v Line: 40
 Info (12128): Elaborating entity "clkdiv25" for hierarchy "vgaSync:vs1|clkdiv25:cd0" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/vgaSync.v Line: 18
 Info (12128): Elaborating entity "game" for hierarchy "game:g1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 12
-Warning (10230): Verilog HDL assignment warning at game.v(30): truncated value with size 2 to match size of target (1) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 30
-Info (12128): Elaborating entity "space" for hierarchy "game:g1|space:sq1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 10
+Warning (10230): Verilog HDL assignment warning at game.v(53): truncated value with size 2 to match size of target (1) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 53
+Info (12128): Elaborating entity "space" for hierarchy "game:g1|space:sq1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 33
 Info (12128): Elaborating entity "renderer" for hierarchy "renderer:r1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 15
 Warning (10235): Verilog HDL Always Construct warning at renderer.v(8): variable "blanking" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 8
 Warning (10235): Verilog HDL Always Construct warning at renderer.v(9): variable "render" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 9
@@ -660,15 +660,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "button" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 1
-Info (21057): Implemented 97 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 104 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 21 output pins
-    Info (21061): Implemented 64 logic cells
+    Info (21061): Implemented 71 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 4764 megabytes
-    Info: Processing ended: Wed Apr 06 20:21:45 2022
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:33
+    Info: Peak virtual memory: 4762 megabytes
+    Info: Processing ended: Wed Apr 06 21:17:47 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:32
 
 
 +------------------------------------------+

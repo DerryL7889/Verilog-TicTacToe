@@ -1,11 +1,34 @@
 module game(input rst, input button, input[8:0] switches, input[9:0] x, input[9:0]y, 
     output[9:0] lx, output[9:0] ly, output[1:0] mode, output square, output highlight, output turn);
 
-    reg[1:0] state;
+    reg [1:0] state, flag;
+	 reg [8:0] select;
     wire[8:0] change, render;
     wire[9:0] lx1, lx2, lx3, lx4, lx5, lx6, lx7, lx8, lx9;
     wire[9:0] ly1, ly2, ly3, ly4, ly5, ly6, ly7, ly8, ly9;
     wire[2:0] mode1, mode2, mode3, mode4, mode5, mode6, mode7, mode8, mode9;
+	 integer i;
+	 
+	 //enforce only one switch active at any time
+	always @* begin
+	     flag = 2'b00;
+        for(i=0; i<9; i=i+1) begin
+            if (switches[i]) begin
+					 if(~flag[0]) begin
+					     flag[0] = 1'b1;
+					 end
+					 else begin
+					     flag[1] = 1'b1;
+					 end
+				end
+        end
+		  if(~flag[1]) begin
+		      select = switches;
+		  end
+		  else begin
+		      select = 9'b000000000;
+		  end
+    end
     
     space sq1(112,32,240,160, rst, change[0], x, y, state, lx1, ly1, render[0], mode1);
     space sq2(256,32,384,160, rst, change[1], x, y, state, lx2, ly2, render[1], mode2);
@@ -21,9 +44,9 @@ module game(input rst, input button, input[8:0] switches, input[9:0] x, input[9:
 
 
     assign square = | render; 
-    assign highlight = ((render[0] & switches[0]) | (render[1] & switches[1]) | (render[2] & switches[2]) |
-                        (render[3] & switches[3]) | (render[4] & switches[4]) | (render[5] & switches[5]) |
-                        (render[6] & switches[6]) | (render[7] & switches[7]) | (render[8] & switches[8]));
+    assign highlight = ((render[0] & select[0]) | (render[1] & select[1]) | (render[2] & select[2]) |
+                        (render[3] & select[3]) | (render[4] & select[4]) | (render[5] & select[5]) |
+                        (render[6] & select[6]) | (render[7] & select[7]) | (render[8] & select[8]));
     assign mode = 2'b00;
     assign lx = 10'b0000000000;
     assign ly = 10'b0000000000;
@@ -31,10 +54,10 @@ module game(input rst, input button, input[8:0] switches, input[9:0] x, input[9:
 
 
 endmodule
-//space sizes?
-//640x480 screen, so maybe 128x128 squares? gonna make it modular anyways, but that's my plan
+//space sizes
+//640x480 screen, so maybe 128x128 squares?
 /*
-ok so for squares, if we are doing 128x128: 32px vertical border 16px between squares -> 112px horizontal border
+if we are doing 128x128: 32px vertical border 16px between squares -> 112px horizontal border
 
 sq1 = 112,32,240,160
 sq2 = 256,32,384,160
