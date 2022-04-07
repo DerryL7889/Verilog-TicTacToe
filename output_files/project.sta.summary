@@ -2,112 +2,436 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'vgaSync:vs1|clkdiv25:cd0|cout'
-Slack : -1.621
-TNS   : -29.129
-
-Type  : Slow 1200mV 85C Model Setup 'button'
-Slack : -0.805
-TNS   : -1.571
-
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -0.637
-TNS   : -0.637
+Slack : -3.586
+TNS   : -89.176
+
+Type  : Slow 1200mV 85C Model Setup 'game:g1|msclock:cl1|cout'
+Slack : -2.791
+TNS   : -30.632
+
+Type  : Slow 1200mV 85C Model Setup 'vgaSync:vs1|clkdiv25:cd0|cout'
+Slack : -1.335
+TNS   : -28.044
+
+Type  : Slow 1200mV 85C Model Setup 'game:g1|change[4]'
+Slack : -1.120
+TNS   : -2.221
+
+Type  : Slow 1200mV 85C Model Setup 'game:g1|change[5]'
+Slack : -1.113
+TNS   : -2.224
+
+Type  : Slow 1200mV 85C Model Setup 'game:g1|change[7]'
+Slack : -0.886
+TNS   : -1.649
+
+Type  : Slow 1200mV 85C Model Setup 'game:g1|change[0]'
+Slack : -0.833
+TNS   : -1.502
+
+Type  : Slow 1200mV 85C Model Setup 'game:g1|change[1]'
+Slack : -0.705
+TNS   : -1.404
+
+Type  : Slow 1200mV 85C Model Setup 'game:g1|change[8]'
+Slack : -0.344
+TNS   : -0.496
+
+Type  : Slow 1200mV 85C Model Setup 'game:g1|change[2]'
+Slack : -0.311
+TNS   : -0.466
+
+Type  : Slow 1200mV 85C Model Setup 'game:g1|change[6]'
+Slack : -0.204
+TNS   : -0.384
+
+Type  : Slow 1200mV 85C Model Setup 'game:g1|change[3]'
+Slack : 0.028
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'game:g1|change[3]'
+Slack : 0.328
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'game:g1|msclock:cl1|cout'
+Slack : 0.330
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'vgaSync:vs1|clkdiv25:cd0|cout'
-Slack : 0.388
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'game:g1|change[8]'
+Slack : 0.492
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'game:g1|change[6]'
+Slack : 0.512
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'game:g1|change[2]'
+Slack : 0.515
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.530
+Slack : 0.548
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'button'
-Slack : 0.594
+Type  : Slow 1200mV 85C Model Hold 'game:g1|change[0]'
+Slack : 1.062
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'game:g1|change[1]'
+Slack : 1.092
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'game:g1|change[7]'
+Slack : 1.161
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'game:g1|change[4]'
+Slack : 1.471
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'game:g1|change[5]'
+Slack : 1.493
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -4.222
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'button'
-Slack : -3.000
-TNS   : -3.000
+TNS   : -44.548
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vgaSync:vs1|clkdiv25:cd0|cout'
 Slack : -1.222
 TNS   : -28.106
 
-Type  : Slow 1200mV 0C Model Setup 'vgaSync:vs1|clkdiv25:cd0|cout'
-Slack : -1.415
-TNS   : -24.950
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'game:g1|msclock:cl1|cout'
+Slack : -1.222
+TNS   : -15.886
 
-Type  : Slow 1200mV 0C Model Setup 'button'
-Slack : -0.647
-TNS   : -1.260
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'game:g1|change[0]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'game:g1|change[1]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'game:g1|change[2]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'game:g1|change[3]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'game:g1|change[4]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'game:g1|change[5]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'game:g1|change[6]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'game:g1|change[7]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'game:g1|change[8]'
+Slack : -1.222
+TNS   : -2.444
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -0.509
-TNS   : -0.509
+Slack : -3.223
+TNS   : -79.474
+
+Type  : Slow 1200mV 0C Model Setup 'game:g1|msclock:cl1|cout'
+Slack : -2.514
+TNS   : -27.428
+
+Type  : Slow 1200mV 0C Model Setup 'vgaSync:vs1|clkdiv25:cd0|cout'
+Slack : -1.151
+TNS   : -24.065
+
+Type  : Slow 1200mV 0C Model Setup 'game:g1|change[4]'
+Slack : -0.927
+TNS   : -1.832
+
+Type  : Slow 1200mV 0C Model Setup 'game:g1|change[5]'
+Slack : -0.924
+TNS   : -1.847
+
+Type  : Slow 1200mV 0C Model Setup 'game:g1|change[7]'
+Slack : -0.727
+TNS   : -1.340
+
+Type  : Slow 1200mV 0C Model Setup 'game:g1|change[0]'
+Slack : -0.680
+TNS   : -1.206
+
+Type  : Slow 1200mV 0C Model Setup 'game:g1|change[1]'
+Slack : -0.545
+TNS   : -1.084
+
+Type  : Slow 1200mV 0C Model Setup 'game:g1|change[8]'
+Slack : -0.207
+TNS   : -0.238
+
+Type  : Slow 1200mV 0C Model Setup 'game:g1|change[2]'
+Slack : -0.186
+TNS   : -0.233
+
+Type  : Slow 1200mV 0C Model Setup 'game:g1|change[6]'
+Slack : -0.075
+TNS   : -0.126
+
+Type  : Slow 1200mV 0C Model Setup 'game:g1|change[3]'
+Slack : 0.123
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'game:g1|msclock:cl1|cout'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'game:g1|change[3]'
+Slack : 0.303
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'vgaSync:vs1|clkdiv25:cd0|cout'
-Slack : 0.354
+Slack : 0.350
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'game:g1|change[8]'
+Slack : 0.447
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'game:g1|change[6]'
+Slack : 0.463
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'game:g1|change[2]'
+Slack : 0.464
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.442
+Slack : 0.504
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'button'
-Slack : 0.544
+Type  : Slow 1200mV 0C Model Hold 'game:g1|change[0]'
+Slack : 0.972
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'game:g1|change[1]'
+Slack : 1.000
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'game:g1|change[7]'
+Slack : 1.067
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'game:g1|change[4]'
+Slack : 1.352
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'game:g1|change[5]'
+Slack : 1.376
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -4.222
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'button'
-Slack : -3.000
-TNS   : -3.000
+TNS   : -44.548
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vgaSync:vs1|clkdiv25:cd0|cout'
 Slack : -1.222
 TNS   : -28.106
 
-Type  : Fast 1200mV 0C Model Setup 'vgaSync:vs1|clkdiv25:cd0|cout'
-Slack : -0.221
-TNS   : -2.245
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'game:g1|msclock:cl1|cout'
+Slack : -1.222
+TNS   : -15.886
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'game:g1|change[0]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'game:g1|change[1]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'game:g1|change[2]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'game:g1|change[3]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'game:g1|change[4]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'game:g1|change[5]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'game:g1|change[6]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'game:g1|change[7]'
+Slack : -1.222
+TNS   : -2.444
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'game:g1|change[8]'
+Slack : -1.222
+TNS   : -2.444
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.063
-TNS   : -0.063
+Slack : -1.234
+TNS   : -24.324
 
-Type  : Fast 1200mV 0C Model Setup 'button'
-Slack : 0.143
+Type  : Fast 1200mV 0C Model Setup 'game:g1|msclock:cl1|cout'
+Slack : -0.818
+TNS   : -8.501
+
+Type  : Fast 1200mV 0C Model Setup 'vgaSync:vs1|clkdiv25:cd0|cout'
+Slack : -0.090
+TNS   : -0.960
+
+Type  : Fast 1200mV 0C Model Setup 'game:g1|change[5]'
+Slack : -0.066
+TNS   : -0.123
+
+Type  : Fast 1200mV 0C Model Setup 'game:g1|change[4]'
+Slack : -0.060
+TNS   : -0.103
+
+Type  : Fast 1200mV 0C Model Setup 'game:g1|change[7]'
+Slack : 0.071
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'game:g1|change[0]'
+Slack : 0.111
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'game:g1|change[1]'
+Slack : 0.153
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'game:g1|change[2]'
+Slack : 0.334
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'game:g1|change[8]'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'game:g1|change[6]'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'game:g1|change[3]'
+Slack : 0.548
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'game:g1|change[3]'
+Slack : 0.105
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'game:g1|msclock:cl1|cout'
+Slack : 0.152
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'vgaSync:vs1|clkdiv25:cd0|cout'
-Slack : 0.179
+Slack : 0.175
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'game:g1|change[8]'
+Slack : 0.196
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'game:g1|change[6]'
+Slack : 0.211
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'game:g1|change[2]'
+Slack : 0.237
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.250
+Slack : 0.248
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'button'
-Slack : 0.273
+Type  : Fast 1200mV 0C Model Hold 'game:g1|change[0]'
+Slack : 0.507
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'game:g1|change[1]'
+Slack : 0.510
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'game:g1|change[7]'
+Slack : 0.539
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'game:g1|change[4]'
+Slack : 0.688
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'game:g1|change[5]'
+Slack : 0.710
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -4.026
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'button'
-Slack : -3.000
-TNS   : -3.000
+TNS   : -38.158
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vgaSync:vs1|clkdiv25:cd0|cout'
 Slack : -1.000
 TNS   : -23.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'game:g1|msclock:cl1|cout'
+Slack : -1.000
+TNS   : -13.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'game:g1|change[0]'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'game:g1|change[1]'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'game:g1|change[2]'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'game:g1|change[3]'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'game:g1|change[4]'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'game:g1|change[5]'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'game:g1|change[6]'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'game:g1|change[7]'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'game:g1|change[8]'
+Slack : -1.000
+TNS   : -2.000
 
 ------------------------------------------------------------

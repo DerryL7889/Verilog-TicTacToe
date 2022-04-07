@@ -84,6 +84,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "switches[2]",
+					"strict" : false
+				},
+				{
 					"name" : "switches[5]",
 					"strict" : false
 				},
@@ -92,23 +96,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[0]",
-					"strict" : false
-				},
-				{
 					"name" : "switches[7]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[2]",
+					"name" : "switches[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[0]",
 					"strict" : false
 				},
 				{
 					"name" : "switches[3]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[1]",
 					"strict" : false
 				},
 				{
@@ -120,11 +120,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "button",
+					"name" : "rst",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "button",
 					"strict" : false
 				},
 				{

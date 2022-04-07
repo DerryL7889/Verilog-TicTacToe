@@ -4,7 +4,7 @@ module space(input[9:0] tlx, input [9:0] tly, input[9:0] brx, input[9:0] bry,
     );
 
     
-    reg[1:0] state; //00 -> empty, 01 -> x, 10 -> o, 11 -> idk
+    reg[1:0] state; //00 -> empty, 01 -> x, 10 -> o, 11 -> invalid
 
     always@(posedge change, negedge rst) begin
         if(~rst)begin

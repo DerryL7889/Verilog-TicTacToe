@@ -69,19 +69,10 @@ cout <= cout~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|game:g1
-clk => ~NO_FANOUT~
+clk => clk.IN1
 rst => rst.IN9
-button => change.OUTPUTSELECT
-button => change.OUTPUTSELECT
-button => change.OUTPUTSELECT
-button => change.OUTPUTSELECT
-button => change.OUTPUTSELECT
-button => change.OUTPUTSELECT
-button => change.OUTPUTSELECT
-button => change.OUTPUTSELECT
-button => change.OUTPUTSELECT
-button => change[8].IN1
-button => state[1].IN1
+button => always2.IN1
+button => always2.IN1
 switches[0] => select[0].DATAB
 switches[0] => flag.DATAA
 switches[0] => flag.DATAB
@@ -154,6 +145,43 @@ square <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 highlight <= highlight.DB_MAX_OUTPUT_PORT_TYPE
 turn[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
 turn[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|game:g1|msclock:cl1
+cin => cout~reg0.CLK
+cin => count[0].CLK
+cin => count[1].CLK
+cin => count[2].CLK
+cin => count[3].CLK
+cin => count[4].CLK
+cin => count[5].CLK
+cin => count[6].CLK
+cin => count[7].CLK
+cin => count[8].CLK
+cin => count[9].CLK
+cin => count[10].CLK
+cin => count[11].CLK
+cin => count[12].CLK
+cin => count[13].CLK
+cin => count[14].CLK
+cin => count[15].CLK
+cin => count[16].CLK
+cin => count[17].CLK
+cin => count[18].CLK
+cin => count[19].CLK
+cin => count[20].CLK
+cin => count[21].CLK
+cin => count[22].CLK
+cin => count[23].CLK
+cin => count[24].CLK
+cin => count[25].CLK
+cin => count[26].CLK
+cin => count[27].CLK
+cin => count[28].CLK
+cin => count[29].CLK
+cin => count[30].CLK
+cin => count[31].CLK
+cout <= cout~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|game:g1|space:sq1
@@ -1629,14 +1657,17 @@ render => green.OUTPUTSELECT
 render => green.OUTPUTSELECT
 render => blue.OUTPUTSELECT
 render => blue.OUTPUTSELECT
-mode => red.DATAA
-mode => green.DATAB
-mode => red.DATAB
-mode => green.DATAA
+mode[0] => Equal0.IN0
+mode[0] => Equal1.IN1
+mode[0] => Equal2.IN1
+mode[0] => Equal3.IN1
+mode[1] => Equal0.IN1
+mode[1] => Equal1.IN0
+mode[1] => Equal2.IN0
+mode[1] => Equal3.IN0
 highlight => red.OUTPUTSELECT
 highlight => green.OUTPUTSELECT
-highlight => blue.DATAB
-highlight => blue.DATAB
+highlight => blue.OUTPUTSELECT
 blanking => red.OUTPUTSELECT
 blanking => red.OUTPUTSELECT
 blanking => red.OUTPUTSELECT

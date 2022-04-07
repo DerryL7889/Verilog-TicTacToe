@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project
-Wed Apr 06 23:37:43 2022
+Thu Apr 07 09:41:03 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition
 
 
@@ -13,26 +13,24 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Port Connectivity Checks: "renderer:r1"
- 13. Port Connectivity Checks: "SSDriver:ssd1"
- 14. Port Connectivity Checks: "game:g1|space:sq9"
- 15. Port Connectivity Checks: "game:g1|space:sq8"
- 16. Port Connectivity Checks: "game:g1|space:sq7"
- 17. Port Connectivity Checks: "game:g1|space:sq6"
- 18. Port Connectivity Checks: "game:g1|space:sq5"
- 19. Port Connectivity Checks: "game:g1|space:sq4"
- 20. Port Connectivity Checks: "game:g1|space:sq3"
- 21. Port Connectivity Checks: "game:g1|space:sq2"
- 22. Port Connectivity Checks: "game:g1|space:sq1"
- 23. Port Connectivity Checks: "game:g1"
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
- 27. Analysis & Synthesis Suppressed Messages
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: game:g1|msclock:cl1
+ 12. Port Connectivity Checks: "SSDriver:ssd1"
+ 13. Port Connectivity Checks: "game:g1|space:sq9"
+ 14. Port Connectivity Checks: "game:g1|space:sq8"
+ 15. Port Connectivity Checks: "game:g1|space:sq7"
+ 16. Port Connectivity Checks: "game:g1|space:sq6"
+ 17. Port Connectivity Checks: "game:g1|space:sq5"
+ 18. Port Connectivity Checks: "game:g1|space:sq4"
+ 19. Port Connectivity Checks: "game:g1|space:sq3"
+ 20. Port Connectivity Checks: "game:g1|space:sq2"
+ 21. Port Connectivity Checks: "game:g1|space:sq1"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -59,15 +57,15 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                   ;
 +------------------------------------+-----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 06 23:37:43 2022                     ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 07 09:41:03 2022                     ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition ;
 ; Revision Name                      ; project                                                   ;
 ; Top-level Entity Name              ; top                                                       ;
 ; Family                             ; MAX 10                                                    ;
-; Total logic elements               ; 87                                                        ;
-;     Total combinational functions  ; 87                                                        ;
-;     Dedicated logic registers      ; 24                                                        ;
-; Total registers                    ; 24                                                        ;
+; Total logic elements               ; 198                                                       ;
+;     Total combinational functions  ; 189                                                       ;
+;     Dedicated logic registers      ; 88                                                        ;
+; Total registers                    ; 88                                                        ;
 ; Total pins                         ; 33                                                        ;
 ; Total virtual pins                 ; 0                                                         ;
 ; Total memory bits                  ; 0                                                         ;
@@ -201,20 +199,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 87        ;
+; Estimated Total logic elements              ; 198       ;
 ;                                             ;           ;
-; Total combinational functions               ; 87        ;
+; Total combinational functions               ; 189       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 41        ;
-;     -- 3 input functions                    ; 17        ;
-;     -- <=2 input functions                  ; 29        ;
+;     -- 4 input functions                    ; 81        ;
+;     -- 3 input functions                    ; 19        ;
+;     -- <=2 input functions                  ; 89        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 69        ;
-;     -- arithmetic mode                      ; 18        ;
+;     -- normal mode                          ; 140       ;
+;     -- arithmetic mode                      ; 49        ;
 ;                                             ;           ;
-; Total registers                             ; 24        ;
-;     -- Dedicated logic registers            ; 24        ;
+; Total registers                             ; 88        ;
+;     -- Dedicated logic registers            ; 88        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 33        ;
@@ -222,9 +220,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; rst~input ;
-; Maximum fan-out                             ; 26        ;
-; Total fan-out                               ; 425       ;
-; Average fan-out                             ; 2.40      ;
+; Maximum fan-out                             ; 55        ;
+; Total fan-out                               ; 900       ;
+; Average fan-out                             ; 2.62      ;
 +---------------------------------------------+-----------+
 
 
@@ -233,49 +231,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name           ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------+-------------+--------------+
-; |top                       ; 87 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 33   ; 0            ; 0          ; |top                          ; top         ; work         ;
+; |top                       ; 189 (0)             ; 88 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 33   ; 0            ; 0          ; |top                          ; top         ; work         ;
 ;    |SSDriver:ssd1|         ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|SSDriver:ssd1            ; SSDriver    ; work         ;
-;    |game:g1|               ; 47 (39)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1                  ; game        ; work         ;
-;       |space:sq1|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq1        ; space       ; work         ;
-;       |space:sq2|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq2        ; space       ; work         ;
-;       |space:sq3|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq3        ; space       ; work         ;
-;       |space:sq4|          ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq4        ; space       ; work         ;
-;       |space:sq7|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq7        ; space       ; work         ;
-;    |renderer:r1|           ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|renderer:r1              ; renderer    ; work         ;
+;    |game:g1|               ; 146 (64)            ; 64 (13)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1                  ; game        ; work         ;
+;       |msclock:cl1|        ; 45 (45)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|msclock:cl1      ; msclock     ; work         ;
+;       |space:sq1|          ; 9 (9)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq1        ; space       ; work         ;
+;       |space:sq2|          ; 3 (3)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq2        ; space       ; work         ;
+;       |space:sq3|          ; 5 (5)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq3        ; space       ; work         ;
+;       |space:sq4|          ; 5 (5)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq4        ; space       ; work         ;
+;       |space:sq5|          ; 1 (1)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq5        ; space       ; work         ;
+;       |space:sq6|          ; 1 (1)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq6        ; space       ; work         ;
+;       |space:sq7|          ; 6 (6)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq7        ; space       ; work         ;
+;       |space:sq8|          ; 3 (3)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq8        ; space       ; work         ;
+;       |space:sq9|          ; 4 (4)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|game:g1|space:sq9        ; space       ; work         ;
+;    |renderer:r1|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|renderer:r1              ; renderer    ; work         ;
 ;    |vgaSync:vs1|           ; 33 (32)             ; 24 (23)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|vgaSync:vs1              ; vgaSync     ; work         ;
 ;       |clkdiv25:cd0|       ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|vgaSync:vs1|clkdiv25:cd0 ; clkdiv25    ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; game:g1|state[1]                                   ; game:g1|state[1]    ; yes                    ;
-; game:g1|state[0]                                   ; game:g1|state[1]    ; yes                    ;
-; Number of user-specified and inferred latches = 2  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                           ;
-+---------------------------------------+--------------------------------------+
-; Register name                         ; Reason for Removal                   ;
-+---------------------------------------+--------------------------------------+
-; game:g1|space:sq1|state[0]            ; Stuck at GND due to stuck port clock ;
-; game:g1|space:sq2|state[0]            ; Stuck at GND due to stuck port clock ;
-; game:g1|space:sq3|state[0]            ; Stuck at GND due to stuck port clock ;
-; game:g1|space:sq4|state[0]            ; Stuck at GND due to stuck port clock ;
-; game:g1|space:sq5|state[0]            ; Stuck at GND due to stuck port clock ;
-; game:g1|space:sq6|state[0]            ; Stuck at GND due to stuck port clock ;
-; game:g1|space:sq7|state[0]            ; Stuck at GND due to stuck port clock ;
-; game:g1|space:sq8|state[0]            ; Stuck at GND due to stuck port clock ;
-; game:g1|space:sq9|state[0]            ; Stuck at GND due to stuck port clock ;
-; Total Number of Removed Registers = 9 ;                                      ;
-+---------------------------------------+--------------------------------------+
 
 
 +------------------------------------------------------+
@@ -283,14 +256,25 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 24    ;
-; Number of registers using Synchronous Clear  ; 20    ;
+; Total registers                              ; 88    ;
+; Number of registers using Synchronous Clear  ; 52    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 23    ;
+; Number of registers using Asynchronous Clear ; 54    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Clock Enable       ; 21    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; game:g1|state[0]                       ; 14      ;
+; game:g1|valid                          ; 2       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -298,19 +282,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|vgaSync:vs1|vcounter[9] ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |top|game:g1|change[3]       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|vgaSync:vs1|vcounter[8] ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|renderer:r1|rgb[11]     ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|renderer:r1|rgb[8]      ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|game:g1|mode[1]         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "renderer:r1"                                                                                                                                                                    ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; mode ; Input ; Warning  ; Input port expression (2 bits) is wider than the input port (1 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: game:g1|msclock:cl1    ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; D              ; 00000000000000000110000110101000 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -590,38 +577,31 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game:g1"                                                                               ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; mode[1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 33                          ;
-; cycloneiii_ff         ; 24                          ;
-;     CLR               ; 3                           ;
+; cycloneiii_ff         ; 88                          ;
+;     CLR               ; 23                          ;
 ;     CLR SCLR          ; 10                          ;
+;     ENA CLR           ; 11                          ;
 ;     ENA CLR SCLR      ; 10                          ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 91                          ;
-;     arith             ; 18                          ;
-;         2 data inputs ; 18                          ;
-;     normal            ; 73                          ;
+;     SCLR              ; 32                          ;
+;     plain             ; 2                           ;
+; cycloneiii_lcell_comb ; 192                         ;
+;     arith             ; 49                          ;
+;         2 data inputs ; 49                          ;
+;     normal            ; 143                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 17                          ;
-;         4 data inputs ; 41                          ;
+;         1 data inputs ; 17                          ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 81                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 5.39                        ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 5.06                        ;
 +-----------------------+-----------------------------+
 
 
@@ -630,7 +610,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -640,7 +620,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition
-    Info: Processing started: Wed Apr 06 23:37:33 2022
+    Info: Processing started: Thu Apr 07 09:40:48 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project -c project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -655,28 +635,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file space.v
     Info (12023): Found entity 1: space File: C:/Users/liude/projects/Git/Verilog-TicTacToe/space.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file renderer.v
     Info (12023): Found entity 1: renderer File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file game.v
+Info (12021): Found 2 design units, including 2 entities, in source file game.v
     Info (12023): Found entity 1: game File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 1
+    Info (12023): Found entity 2: msclock File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 136
 Info (12127): Elaborating entity "top" for the top level hierarchy
 Info (12128): Elaborating entity "vgaSync" for hierarchy "vgaSync:vs1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 9
 Info (12128): Elaborating entity "clkdiv25" for hierarchy "vgaSync:vs1|clkdiv25:cd0" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/vgaSync.v Line: 18
 Info (12128): Elaborating entity "game" for hierarchy "game:g1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 12
-Warning (10235): Verilog HDL Always Construct warning at game.v(38): variable "modes" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 38
-Critical Warning (10237): Verilog HDL warning at game.v(66): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 66
-Warning (10240): Verilog HDL Always Construct warning at game.v(65): inferring latch(es) for variable "state", which holds its previous value in one or more paths through the always construct File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Warning (10240): Verilog HDL Always Construct warning at game.v(65): inferring latch(es) for variable "change", which holds its previous value in one or more paths through the always construct File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (10041): Inferred latch for "change[0]" at game.v(65) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (10041): Inferred latch for "change[1]" at game.v(65) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (10041): Inferred latch for "change[2]" at game.v(65) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (10041): Inferred latch for "change[3]" at game.v(65) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (10041): Inferred latch for "change[4]" at game.v(65) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (10041): Inferred latch for "change[5]" at game.v(65) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (10041): Inferred latch for "change[6]" at game.v(65) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (10041): Inferred latch for "change[7]" at game.v(65) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (10041): Inferred latch for "change[8]" at game.v(65) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (10041): Inferred latch for "state[0]" at game.v(65) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (10041): Inferred latch for "state[1]" at game.v(65) File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Info (12128): Elaborating entity "space" for hierarchy "game:g1|space:sq1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 95
+Warning (10235): Verilog HDL Always Construct warning at game.v(39): variable "modes" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 39
+Info (12128): Elaborating entity "msclock" for hierarchy "game:g1|msclock:cl1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 109
+Info (12128): Elaborating entity "space" for hierarchy "game:g1|space:sq1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 111
 Info (12128): Elaborating entity "SSDriver" for hierarchy "SSDriver:ssd1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 13
 Info (12128): Elaborating entity "renderer" for hierarchy "renderer:r1" File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 16
 Warning (10235): Verilog HDL Always Construct warning at renderer.v(8): variable "blanking" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 8
@@ -686,26 +654,24 @@ Warning (10235): Verilog HDL Always Construct warning at renderer.v(16): variabl
 Warning (10235): Verilog HDL Always Construct warning at renderer.v(22): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 22
 Warning (10235): Verilog HDL Always Construct warning at renderer.v(28): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 28
 Warning (10235): Verilog HDL Always Construct warning at renderer.v(41): variable "highlight" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/liude/projects/Git/Verilog-TicTacToe/renderer.v Line: 41
-Warning (12241): 11 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13012): Latch game:g1|state[1] has unsafe behavior File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal game:g1|state[0] File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-Warning (13012): Latch game:g1|state[0] has unsafe behavior File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal game:g1|state[0] File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 65
+Warning (12241): 10 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high File: C:/Users/liude/projects/Git/Verilog-TicTacToe/game.v Line: 74
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ssd[5]" is stuck at GND File: C:/Users/liude/projects/Git/Verilog-TicTacToe/top.v Line: 2
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/liude/projects/Git/Verilog-TicTacToe/output_files/project.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 120 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 231 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 21 output pins
-    Info (21061): Implemented 87 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4764 megabytes
-    Info: Processing ended: Wed Apr 06 23:37:43 2022
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:23
+    Info (21061): Implemented 198 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4779 megabytes
+    Info: Processing ended: Thu Apr 07 09:41:03 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:32
 
 
 +------------------------------------------+

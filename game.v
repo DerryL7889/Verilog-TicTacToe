@@ -1,9 +1,10 @@
 module game(input clk, input rst, input button, input[8:0] switches, input[9:0] x, input[9:0]y, 
     output[9:0] lx, output[9:0] ly, output[1:0] mode, output square, output highlight, output[1:0] turn);
 
-    reg sig;
-	 reg [1:0] state, flag, curr_mode;
+    reg sig, valid;
+	reg [1:0] state, flag, curr_mode;
     reg [8:0] select, change;
+	 wire clock;
     wire[8:0] render;
     wire[9:0] lx1, lx2, lx3, lx4, lx5, lx6, lx7, lx8, lx9;
     wire[9:0] ly1, ly2, ly3, ly4, ly5, ly6, ly7, ly8, ly9;
@@ -31,67 +32,60 @@ module game(input clk, input rst, input button, input[8:0] switches, input[9:0] 
         end
     end
 
-	always@(render) begin
-	curr_mode = 2'b00;
-		for(i=0; i<9; i=i+1) begin
-			if(render[i])begin
-				curr_mode = modes[2*(i)+1 -:2];
-			end
-		end
-	end
-   always@(negedge rst, negedge button)begin
-		  
-       if(~rst)begin
-           //reset
-           state <= 2'b01; //player 1 is x
-       end 
-		  else if(~button) begin
-           //button
-           if(|select) begin
-				//TODO: check if valid move
-               //place marker
-           //TODO:check for win
-               //pass turn
-               if(state == 2'b01) begin
-                   state <= 2'b10;
-               end
-               else if(state == 2'b10) begin
-                   state <= 2'b01;
-               end
-           end
-       end
-   end
+ 	always@(render) begin
+ 	curr_mode = 2'b00;
+ 		for(i=0; i<9; i=i+1) begin
+ 			if(render[i])begin
+ 				curr_mode = {modes[2*i + 1],modes[2*i]};
+ 			end
+ 		end
+ 	end
 	 
-	//  always@(posedge clk, negedge rst, negedge button) begin
-	// 	  sig <= ~button;
-	// 	  if(~rst)begin
-    //         //reset
-    //         state <= 2'b01; //player 1 is x
-	// 			change <= 9'b000000000;
-    //     end 
-	// 	  else if(~button) begin
-    //         //button
-    //         if(|select) begin
-	// 			//TODO: check if valid move
-    //             //place marker
-	// 				 if(~sig) begin
-	// 					  change <= select;
-	// 				 end
-	// 			  	 else begin
-	// 			   	  change <= 9'b000000000;
-	// 				 end
-    //         //TODO:check for win
-    //             //pass turn
-    //             if(state == 2'b01) begin
-    //                 state <= 2'b10;
-    //             end
-    //             else if(state == 2'b10) begin
-    //                 state <= 2'b01;
-    //             end
-    //         end
-    //     end
-	//  end
-
+    always@(posedge clock, negedge rst) begin
+        if(~rst)begin
+            //reset
+            sig <= 1'b0;
+            state <= 2'b01; //player 1 is x
+				valid <= 1'b1;
+            change <= 9'b000000000;
+        end 
+        else if(~button & ~sig) begin
+            //button
+            sig <= 1'b1;
+            if(|select) begin
+            //check if valid move
+					valid = 1'b0;
+					for(i=0; i<9; i=i+1) begin
+						if(select[i] & ({modes[2*i + 1],modes[2*i]} === 2'b00)) begin
+							valid = 1'b1;
+						end
+					end
+					
+					if(valid) begin
+					//place marker
+						 change = select;
+					 end
+            end
+        end
+        else if(button & sig) begin
+            sig <= 1'b0;
+            change <= 9'b000000000;
+				if(valid) begin
+						//TODO: check for win
+						//pass turn
+						 if(state == 2'b01) begin
+							  state <= 2'b10;
+						 end
+						 else if(state == 2'b10) begin
+							  state <= 2'b01;
+						 end
+						 valid <= 1'b0;
+				end
+        end
+    end
+	
+	msclock cl1(clk, clock);
+	
     space sq1(112,32,240,160, rst, change[0], x, y, state, lx1, ly1, render[0], modes[1:0]);
     space sq2(256,32,384,160, rst, change[1], x, y, state, lx2, ly2, render[1], modes[3:2]);
     space sq3(400,32,528,160, rst, change[2], x, y, state, lx3, ly3, render[2], modes[5:4]);
@@ -114,6 +108,22 @@ module game(input clk, input rst, input button, input[8:0] switches, input[9:0] 
     assign ly = 10'b0000000000;
     assign turn = state;
 
+
+endmodule
+
+module msclock(input cin, output reg cout);
+	reg[31:0] count; 
+	parameter D = 32'd25000;
+
+	always @(posedge cin)
+	begin
+		count <= count + 32'd1;
+			if (count >= (D-1))
+			begin
+				cout <= ~cout;
+				count <= 32'd0;
+			end
+	end
 
 endmodule
 //space sizes
