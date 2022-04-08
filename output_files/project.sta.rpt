@@ -1,5 +1,5 @@
 Timing Analyzer report for project
-Thu Apr 07 10:32:00 2022
+Fri Apr 08 00:08:04 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition
 
 
@@ -92,12 +92,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.11        ;
+; Average used               ; 1.26        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   3.7%      ;
+;     Processor 2            ;   8.6%      ;
+;     Processor 3            ;   8.5%      ;
+;     Processor 4            ;   8.5%      ;
 +----------------------------+-------------+
 
 
@@ -118,6 +120,7 @@ https://fpgasoftware.intel.com/eula.
 ; game:g1|change[8]             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { game:g1|change[8] }             ;
 ; game:g1|msclock:cl1|cout      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { game:g1|msclock:cl1|cout }      ;
 ; vgaSync:vs1|clkdiv25:cd0|cout ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { vgaSync:vs1|clkdiv25:cd0|cout } ;
+; vgaSync:vs1|hcounter[0]       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { vgaSync:vs1|hcounter[0] }       ;
 +-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
 
 
@@ -126,9 +129,10 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+-------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                    ; Note ;
 +------------+-----------------+-------------------------------+------+
-; 218.05 MHz ; 218.05 MHz      ; clk                           ;      ;
-; 370.23 MHz ; 370.23 MHz      ; game:g1|msclock:cl1|cout      ;      ;
-; 428.27 MHz ; 428.27 MHz      ; vgaSync:vs1|clkdiv25:cd0|cout ;      ;
+; 69.93 MHz  ; 69.93 MHz       ; vgaSync:vs1|hcounter[0]       ;      ;
+; 185.29 MHz ; 185.29 MHz      ; vgaSync:vs1|clkdiv25:cd0|cout ;      ;
+; 214.0 MHz  ; 214.0 MHz       ; game:g1|msclock:cl1|cout      ;      ;
+; 218.29 MHz ; 218.29 MHz      ; clk                           ;      ;
 +------------+-----------------+-------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -138,39 +142,41 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------+--------+---------------+
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
-; clk                           ; -3.586 ; -89.176       ;
-; game:g1|msclock:cl1|cout      ; -2.791 ; -30.632       ;
-; vgaSync:vs1|clkdiv25:cd0|cout ; -1.335 ; -28.044       ;
-; game:g1|change[4]             ; -1.120 ; -2.221        ;
-; game:g1|change[5]             ; -1.113 ; -2.224        ;
-; game:g1|change[7]             ; -0.886 ; -1.649        ;
-; game:g1|change[0]             ; -0.833 ; -1.502        ;
-; game:g1|change[1]             ; -0.705 ; -1.404        ;
-; game:g1|change[8]             ; -0.344 ; -0.496        ;
-; game:g1|change[2]             ; -0.311 ; -0.466        ;
-; game:g1|change[6]             ; -0.204 ; -0.384        ;
-; game:g1|change[3]             ; 0.028  ; 0.000         ;
+; vgaSync:vs1|hcounter[0]       ; -8.573 ; -84.010       ;
+; vgaSync:vs1|clkdiv25:cd0|cout ; -4.397 ; -66.937       ;
+; game:g1|msclock:cl1|cout      ; -4.094 ; -63.399       ;
+; clk                           ; -3.581 ; -81.965       ;
+; game:g1|change[7]             ; -0.723 ; -1.354        ;
+; game:g1|change[6]             ; -0.608 ; -1.127        ;
+; game:g1|change[4]             ; -0.567 ; -1.044        ;
+; game:g1|change[3]             ; -0.530 ; -0.824        ;
+; game:g1|change[5]             ; -0.504 ; -0.908        ;
+; game:g1|change[8]             ; -0.495 ; -0.954        ;
+; game:g1|change[0]             ; -0.446 ; -0.870        ;
+; game:g1|change[1]             ; -0.418 ; -0.834        ;
+; game:g1|change[2]             ; -0.164 ; -0.172        ;
 +-------------------------------+--------+---------------+
 
 
-+-------------------------------------------------------+
-; Slow 1200mV 85C Model Hold Summary                    ;
-+-------------------------------+-------+---------------+
-; Clock                         ; Slack ; End Point TNS ;
-+-------------------------------+-------+---------------+
-; game:g1|change[3]             ; 0.328 ; 0.000         ;
-; game:g1|msclock:cl1|cout      ; 0.330 ; 0.000         ;
-; vgaSync:vs1|clkdiv25:cd0|cout ; 0.382 ; 0.000         ;
-; game:g1|change[8]             ; 0.492 ; 0.000         ;
-; game:g1|change[6]             ; 0.512 ; 0.000         ;
-; game:g1|change[2]             ; 0.515 ; 0.000         ;
-; clk                           ; 0.548 ; 0.000         ;
-; game:g1|change[0]             ; 1.062 ; 0.000         ;
-; game:g1|change[1]             ; 1.092 ; 0.000         ;
-; game:g1|change[7]             ; 1.161 ; 0.000         ;
-; game:g1|change[4]             ; 1.471 ; 0.000         ;
-; game:g1|change[5]             ; 1.493 ; 0.000         ;
-+-------------------------------+-------+---------------+
++--------------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary                     ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; vgaSync:vs1|hcounter[0]       ; -0.295 ; -0.890        ;
+; game:g1|msclock:cl1|cout      ; 0.330  ; 0.000         ;
+; game:g1|change[2]             ; 0.431  ; 0.000         ;
+; clk                           ; 0.546  ; 0.000         ;
+; vgaSync:vs1|clkdiv25:cd0|cout ; 0.584  ; 0.000         ;
+; game:g1|change[3]             ; 0.697  ; 0.000         ;
+; game:g1|change[4]             ; 0.730  ; 0.000         ;
+; game:g1|change[0]             ; 0.750  ; 0.000         ;
+; game:g1|change[6]             ; 0.775  ; 0.000         ;
+; game:g1|change[1]             ; 0.829  ; 0.000         ;
+; game:g1|change[5]             ; 0.837  ; 0.000         ;
+; game:g1|change[8]             ; 0.889  ; 0.000         ;
+; game:g1|change[7]             ; 1.013  ; 0.000         ;
++-------------------------------+--------+---------------+
 
 
 ------------------------------------------
@@ -190,9 +196,10 @@ No paths to report.
 +-------------------------------+--------+---------------+
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
+; vgaSync:vs1|hcounter[0]       ; -3.314 ; -171.901      ;
 ; clk                           ; -3.000 ; -44.548       ;
 ; vgaSync:vs1|clkdiv25:cd0|cout ; -1.222 ; -28.106       ;
-; game:g1|msclock:cl1|cout      ; -1.222 ; -15.886       ;
+; game:g1|msclock:cl1|cout      ; -1.222 ; -23.218       ;
 ; game:g1|change[0]             ; -1.222 ; -2.444        ;
 ; game:g1|change[1]             ; -1.222 ; -2.444        ;
 ; game:g1|change[2]             ; -1.222 ; -2.444        ;
@@ -211,15 +218,16 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                                                             ;
-+------------+-----------------+-------------------------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name                    ; Note                                           ;
-+------------+-----------------+-------------------------------+------------------------------------------------+
-; 236.8 MHz  ; 236.8 MHz       ; clk                           ;                                                ;
-; 398.72 MHz ; 398.72 MHz      ; game:g1|msclock:cl1|cout      ;                                                ;
-; 464.9 MHz  ; 450.05 MHz      ; vgaSync:vs1|clkdiv25:cd0|cout ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+-------------------------------+------------------------------------------------+
++---------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                   ;
++------------+-----------------+-------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                    ; Note ;
++------------+-----------------+-------------------------------+------+
+; 77.62 MHz  ; 77.62 MHz       ; vgaSync:vs1|hcounter[0]       ;      ;
+; 204.08 MHz ; 204.08 MHz      ; vgaSync:vs1|clkdiv25:cd0|cout ;      ;
+; 234.8 MHz  ; 234.8 MHz       ; game:g1|msclock:cl1|cout      ;      ;
+; 237.02 MHz ; 237.02 MHz      ; clk                           ;      ;
++------------+-----------------+-------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -228,39 +236,41 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------+--------+---------------+
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
-; clk                           ; -3.223 ; -79.474       ;
-; game:g1|msclock:cl1|cout      ; -2.514 ; -27.428       ;
-; vgaSync:vs1|clkdiv25:cd0|cout ; -1.151 ; -24.065       ;
-; game:g1|change[4]             ; -0.927 ; -1.832        ;
-; game:g1|change[5]             ; -0.924 ; -1.847        ;
-; game:g1|change[7]             ; -0.727 ; -1.340        ;
-; game:g1|change[0]             ; -0.680 ; -1.206        ;
-; game:g1|change[1]             ; -0.545 ; -1.084        ;
-; game:g1|change[8]             ; -0.207 ; -0.238        ;
-; game:g1|change[2]             ; -0.186 ; -0.233        ;
-; game:g1|change[6]             ; -0.075 ; -0.126        ;
-; game:g1|change[3]             ; 0.123  ; 0.000         ;
+; vgaSync:vs1|hcounter[0]       ; -7.812 ; -76.518       ;
+; vgaSync:vs1|clkdiv25:cd0|cout ; -3.900 ; -59.133       ;
+; game:g1|msclock:cl1|cout      ; -3.649 ; -56.880       ;
+; clk                           ; -3.219 ; -72.840       ;
+; game:g1|change[7]             ; -0.544 ; -1.008        ;
+; game:g1|change[6]             ; -0.437 ; -0.789        ;
+; game:g1|change[4]             ; -0.394 ; -0.701        ;
+; game:g1|change[3]             ; -0.388 ; -0.563        ;
+; game:g1|change[5]             ; -0.375 ; -0.655        ;
+; game:g1|change[8]             ; -0.366 ; -0.698        ;
+; game:g1|change[0]             ; -0.293 ; -0.550        ;
+; game:g1|change[1]             ; -0.288 ; -0.572        ;
+; game:g1|change[2]             ; -0.066 ; -0.066        ;
 +-------------------------------+--------+---------------+
 
 
-+-------------------------------------------------------+
-; Slow 1200mV 0C Model Hold Summary                     ;
-+-------------------------------+-------+---------------+
-; Clock                         ; Slack ; End Point TNS ;
-+-------------------------------+-------+---------------+
-; game:g1|msclock:cl1|cout      ; 0.299 ; 0.000         ;
-; game:g1|change[3]             ; 0.303 ; 0.000         ;
-; vgaSync:vs1|clkdiv25:cd0|cout ; 0.350 ; 0.000         ;
-; game:g1|change[8]             ; 0.447 ; 0.000         ;
-; game:g1|change[6]             ; 0.463 ; 0.000         ;
-; game:g1|change[2]             ; 0.464 ; 0.000         ;
-; clk                           ; 0.504 ; 0.000         ;
-; game:g1|change[0]             ; 0.972 ; 0.000         ;
-; game:g1|change[1]             ; 1.000 ; 0.000         ;
-; game:g1|change[7]             ; 1.067 ; 0.000         ;
-; game:g1|change[4]             ; 1.352 ; 0.000         ;
-; game:g1|change[5]             ; 1.376 ; 0.000         ;
-+-------------------------------+-------+---------------+
++--------------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary                      ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; vgaSync:vs1|hcounter[0]       ; -0.214 ; -0.546        ;
+; game:g1|msclock:cl1|cout      ; 0.299  ; 0.000         ;
+; game:g1|change[2]             ; 0.391  ; 0.000         ;
+; clk                           ; 0.503  ; 0.000         ;
+; vgaSync:vs1|clkdiv25:cd0|cout ; 0.538  ; 0.000         ;
+; game:g1|change[3]             ; 0.647  ; 0.000         ;
+; game:g1|change[4]             ; 0.666  ; 0.000         ;
+; game:g1|change[0]             ; 0.699  ; 0.000         ;
+; game:g1|change[6]             ; 0.714  ; 0.000         ;
+; game:g1|change[1]             ; 0.769  ; 0.000         ;
+; game:g1|change[5]             ; 0.784  ; 0.000         ;
+; game:g1|change[8]             ; 0.822  ; 0.000         ;
+; game:g1|change[7]             ; 0.933  ; 0.000         ;
++-------------------------------+--------+---------------+
 
 
 -----------------------------------------
@@ -281,8 +291,9 @@ No paths to report.
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
 ; clk                           ; -3.000 ; -44.548       ;
+; vgaSync:vs1|hcounter[0]       ; -2.922 ; -153.322      ;
 ; vgaSync:vs1|clkdiv25:cd0|cout ; -1.222 ; -28.106       ;
-; game:g1|msclock:cl1|cout      ; -1.222 ; -15.886       ;
+; game:g1|msclock:cl1|cout      ; -1.222 ; -23.218       ;
 ; game:g1|change[0]             ; -1.222 ; -2.444        ;
 ; game:g1|change[1]             ; -1.222 ; -2.444        ;
 ; game:g1|change[2]             ; -1.222 ; -2.444        ;
@@ -306,39 +317,41 @@ No synchronizer chains to report.
 +-------------------------------+--------+---------------+
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
-; clk                           ; -1.234 ; -24.324       ;
-; game:g1|msclock:cl1|cout      ; -0.818 ; -8.501        ;
-; vgaSync:vs1|clkdiv25:cd0|cout ; -0.090 ; -0.960        ;
-; game:g1|change[5]             ; -0.066 ; -0.123        ;
-; game:g1|change[4]             ; -0.060 ; -0.103        ;
-; game:g1|change[7]             ; 0.071  ; 0.000         ;
-; game:g1|change[0]             ; 0.111  ; 0.000         ;
-; game:g1|change[1]             ; 0.153  ; 0.000         ;
-; game:g1|change[2]             ; 0.334  ; 0.000         ;
-; game:g1|change[8]             ; 0.354  ; 0.000         ;
-; game:g1|change[6]             ; 0.397  ; 0.000         ;
-; game:g1|change[3]             ; 0.548  ; 0.000         ;
+; vgaSync:vs1|hcounter[0]       ; -3.896 ; -38.529       ;
+; vgaSync:vs1|clkdiv25:cd0|cout ; -1.648 ; -20.321       ;
+; game:g1|msclock:cl1|cout      ; -1.441 ; -20.640       ;
+; clk                           ; -1.265 ; -21.281       ;
+; game:g1|change[7]             ; 0.125  ; 0.000         ;
+; game:g1|change[6]             ; 0.160  ; 0.000         ;
+; game:g1|change[4]             ; 0.166  ; 0.000         ;
+; game:g1|change[3]             ; 0.238  ; 0.000         ;
+; game:g1|change[0]             ; 0.258  ; 0.000         ;
+; game:g1|change[5]             ; 0.262  ; 0.000         ;
+; game:g1|change[8]             ; 0.280  ; 0.000         ;
+; game:g1|change[1]             ; 0.295  ; 0.000         ;
+; game:g1|change[2]             ; 0.449  ; 0.000         ;
 +-------------------------------+--------+---------------+
 
 
-+-------------------------------------------------------+
-; Fast 1200mV 0C Model Hold Summary                     ;
-+-------------------------------+-------+---------------+
-; Clock                         ; Slack ; End Point TNS ;
-+-------------------------------+-------+---------------+
-; game:g1|change[3]             ; 0.105 ; 0.000         ;
-; game:g1|msclock:cl1|cout      ; 0.152 ; 0.000         ;
-; vgaSync:vs1|clkdiv25:cd0|cout ; 0.175 ; 0.000         ;
-; game:g1|change[8]             ; 0.196 ; 0.000         ;
-; game:g1|change[6]             ; 0.211 ; 0.000         ;
-; game:g1|change[2]             ; 0.237 ; 0.000         ;
-; clk                           ; 0.248 ; 0.000         ;
-; game:g1|change[0]             ; 0.507 ; 0.000         ;
-; game:g1|change[1]             ; 0.510 ; 0.000         ;
-; game:g1|change[7]             ; 0.539 ; 0.000         ;
-; game:g1|change[4]             ; 0.688 ; 0.000         ;
-; game:g1|change[5]             ; 0.710 ; 0.000         ;
-+-------------------------------+-------+---------------+
++--------------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary                      ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; vgaSync:vs1|hcounter[0]       ; -0.373 ; -0.373        ;
+; game:g1|msclock:cl1|cout      ; 0.152  ; 0.000         ;
+; game:g1|change[2]             ; 0.193  ; 0.000         ;
+; clk                           ; 0.246  ; 0.000         ;
+; vgaSync:vs1|clkdiv25:cd0|cout ; 0.266  ; 0.000         ;
+; game:g1|change[4]             ; 0.306  ; 0.000         ;
+; game:g1|change[0]             ; 0.307  ; 0.000         ;
+; game:g1|change[6]             ; 0.312  ; 0.000         ;
+; game:g1|change[3]             ; 0.326  ; 0.000         ;
+; game:g1|change[5]             ; 0.367  ; 0.000         ;
+; game:g1|change[1]             ; 0.375  ; 0.000         ;
+; game:g1|change[8]             ; 0.384  ; 0.000         ;
+; game:g1|change[7]             ; 0.395  ; 0.000         ;
++-------------------------------+--------+---------------+
 
 
 -----------------------------------------
@@ -358,9 +371,10 @@ No paths to report.
 +-------------------------------+--------+---------------+
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
-; clk                           ; -3.000 ; -38.158       ;
+; clk                           ; -3.000 ; -38.009       ;
+; vgaSync:vs1|hcounter[0]       ; -1.420 ; -67.004       ;
 ; vgaSync:vs1|clkdiv25:cd0|cout ; -1.000 ; -23.000       ;
-; game:g1|msclock:cl1|cout      ; -1.000 ; -13.000       ;
+; game:g1|msclock:cl1|cout      ; -1.000 ; -19.000       ;
 ; game:g1|change[0]             ; -1.000 ; -2.000        ;
 ; game:g1|change[1]             ; -1.000 ; -2.000        ;
 ; game:g1|change[2]             ; -1.000 ; -2.000        ;
@@ -379,38 +393,40 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                          ;
-+--------------------------------+----------+-------+----------+---------+---------------------+
-; Clock                          ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+--------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack               ; -3.586   ; 0.105 ; N/A      ; N/A     ; -3.000              ;
-;  clk                           ; -3.586   ; 0.248 ; N/A      ; N/A     ; -3.000              ;
-;  game:g1|change[0]             ; -0.833   ; 0.507 ; N/A      ; N/A     ; -1.222              ;
-;  game:g1|change[1]             ; -0.705   ; 0.510 ; N/A      ; N/A     ; -1.222              ;
-;  game:g1|change[2]             ; -0.311   ; 0.237 ; N/A      ; N/A     ; -1.222              ;
-;  game:g1|change[3]             ; 0.028    ; 0.105 ; N/A      ; N/A     ; -1.222              ;
-;  game:g1|change[4]             ; -1.120   ; 0.688 ; N/A      ; N/A     ; -1.222              ;
-;  game:g1|change[5]             ; -1.113   ; 0.710 ; N/A      ; N/A     ; -1.222              ;
-;  game:g1|change[6]             ; -0.204   ; 0.211 ; N/A      ; N/A     ; -1.222              ;
-;  game:g1|change[7]             ; -0.886   ; 0.539 ; N/A      ; N/A     ; -1.222              ;
-;  game:g1|change[8]             ; -0.344   ; 0.196 ; N/A      ; N/A     ; -1.222              ;
-;  game:g1|msclock:cl1|cout      ; -2.791   ; 0.152 ; N/A      ; N/A     ; -1.222              ;
-;  vgaSync:vs1|clkdiv25:cd0|cout ; -1.335   ; 0.175 ; N/A      ; N/A     ; -1.222              ;
-; Design-wide TNS                ; -158.198 ; 0.0   ; 0.0      ; 0.0     ; -110.536            ;
-;  clk                           ; -89.176  ; 0.000 ; N/A      ; N/A     ; -44.548             ;
-;  game:g1|change[0]             ; -1.502   ; 0.000 ; N/A      ; N/A     ; -2.444              ;
-;  game:g1|change[1]             ; -1.404   ; 0.000 ; N/A      ; N/A     ; -2.444              ;
-;  game:g1|change[2]             ; -0.466   ; 0.000 ; N/A      ; N/A     ; -2.444              ;
-;  game:g1|change[3]             ; 0.000    ; 0.000 ; N/A      ; N/A     ; -2.444              ;
-;  game:g1|change[4]             ; -2.221   ; 0.000 ; N/A      ; N/A     ; -2.444              ;
-;  game:g1|change[5]             ; -2.224   ; 0.000 ; N/A      ; N/A     ; -2.444              ;
-;  game:g1|change[6]             ; -0.384   ; 0.000 ; N/A      ; N/A     ; -2.444              ;
-;  game:g1|change[7]             ; -1.649   ; 0.000 ; N/A      ; N/A     ; -2.444              ;
-;  game:g1|change[8]             ; -0.496   ; 0.000 ; N/A      ; N/A     ; -2.444              ;
-;  game:g1|msclock:cl1|cout      ; -30.632  ; 0.000 ; N/A      ; N/A     ; -15.886             ;
-;  vgaSync:vs1|clkdiv25:cd0|cout ; -28.044  ; 0.000 ; N/A      ; N/A     ; -28.106             ;
-+--------------------------------+----------+-------+----------+---------+---------------------+
++-----------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                           ;
++--------------------------------+----------+--------+----------+---------+---------------------+
+; Clock                          ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++--------------------------------+----------+--------+----------+---------+---------------------+
+; Worst-case Slack               ; -8.573   ; -0.373 ; N/A      ; N/A     ; -3.314              ;
+;  clk                           ; -3.581   ; 0.246  ; N/A      ; N/A     ; -3.000              ;
+;  game:g1|change[0]             ; -0.446   ; 0.307  ; N/A      ; N/A     ; -1.222              ;
+;  game:g1|change[1]             ; -0.418   ; 0.375  ; N/A      ; N/A     ; -1.222              ;
+;  game:g1|change[2]             ; -0.164   ; 0.193  ; N/A      ; N/A     ; -1.222              ;
+;  game:g1|change[3]             ; -0.530   ; 0.326  ; N/A      ; N/A     ; -1.222              ;
+;  game:g1|change[4]             ; -0.567   ; 0.306  ; N/A      ; N/A     ; -1.222              ;
+;  game:g1|change[5]             ; -0.504   ; 0.367  ; N/A      ; N/A     ; -1.222              ;
+;  game:g1|change[6]             ; -0.608   ; 0.312  ; N/A      ; N/A     ; -1.222              ;
+;  game:g1|change[7]             ; -0.723   ; 0.395  ; N/A      ; N/A     ; -1.222              ;
+;  game:g1|change[8]             ; -0.495   ; 0.384  ; N/A      ; N/A     ; -1.222              ;
+;  game:g1|msclock:cl1|cout      ; -4.094   ; 0.152  ; N/A      ; N/A     ; -1.222              ;
+;  vgaSync:vs1|clkdiv25:cd0|cout ; -4.397   ; 0.266  ; N/A      ; N/A     ; -1.222              ;
+;  vgaSync:vs1|hcounter[0]       ; -8.573   ; -0.373 ; N/A      ; N/A     ; -3.314              ;
+; Design-wide TNS                ; -304.398 ; -0.89  ; 0.0      ; 0.0     ; -289.769            ;
+;  clk                           ; -81.965  ; 0.000  ; N/A      ; N/A     ; -44.548             ;
+;  game:g1|change[0]             ; -0.870   ; 0.000  ; N/A      ; N/A     ; -2.444              ;
+;  game:g1|change[1]             ; -0.834   ; 0.000  ; N/A      ; N/A     ; -2.444              ;
+;  game:g1|change[2]             ; -0.172   ; 0.000  ; N/A      ; N/A     ; -2.444              ;
+;  game:g1|change[3]             ; -0.824   ; 0.000  ; N/A      ; N/A     ; -2.444              ;
+;  game:g1|change[4]             ; -1.044   ; 0.000  ; N/A      ; N/A     ; -2.444              ;
+;  game:g1|change[5]             ; -0.908   ; 0.000  ; N/A      ; N/A     ; -2.444              ;
+;  game:g1|change[6]             ; -1.127   ; 0.000  ; N/A      ; N/A     ; -2.444              ;
+;  game:g1|change[7]             ; -1.354   ; 0.000  ; N/A      ; N/A     ; -2.444              ;
+;  game:g1|change[8]             ; -0.954   ; 0.000  ; N/A      ; N/A     ; -2.444              ;
+;  game:g1|msclock:cl1|cout      ; -63.399  ; 0.000  ; N/A      ; N/A     ; -23.218             ;
+;  vgaSync:vs1|clkdiv25:cd0|cout ; -66.937  ; 0.000  ; N/A      ; N/A     ; -28.106             ;
+;  vgaSync:vs1|hcounter[0]       ; -84.010  ; -0.890 ; N/A      ; N/A     ; -171.901            ;
++--------------------------------+----------+--------+----------+---------+---------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -448,14 +464,14 @@ No synchronizer chains to report.
 +---------------------+-----------------------+-----------------+-----------------+
 ; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
 +---------------------+-----------------------+-----------------+-----------------+
+; switches[3]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; switches[2]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; switches[5]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; switches[6]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; switches[7]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; switches[5]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; switches[1]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; switches[0]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; switches[3]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; switches[4]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; switches[7]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; switches[8]         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; rst                 ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; button              ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
@@ -577,17 +593,20 @@ No synchronizer chains to report.
 ; game:g1|msclock:cl1|cout      ; game:g1|change[6]             ; 2        ; 0        ; 0        ; 0        ;
 ; game:g1|msclock:cl1|cout      ; game:g1|change[7]             ; 2        ; 0        ; 0        ; 0        ;
 ; game:g1|msclock:cl1|cout      ; game:g1|change[8]             ; 2        ; 0        ; 0        ; 0        ;
-; game:g1|change[0]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[1]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[2]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[3]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[4]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[5]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[6]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[7]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[8]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|msclock:cl1|cout      ; game:g1|msclock:cl1|cout      ; 36       ; 0        ; 0        ; 0        ;
-; vgaSync:vs1|clkdiv25:cd0|cout ; vgaSync:vs1|clkdiv25:cd0|cout ; 390      ; 0        ; 0        ; 0        ;
+; game:g1|change[0]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|change[1]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|change[2]             ; game:g1|msclock:cl1|cout      ; 64       ; 0        ; 0        ; 0        ;
+; game:g1|change[3]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|change[4]             ; game:g1|msclock:cl1|cout      ; 40       ; 0        ; 0        ; 0        ;
+; game:g1|change[5]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|change[6]             ; game:g1|msclock:cl1|cout      ; 64       ; 0        ; 0        ; 0        ;
+; game:g1|change[7]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|change[8]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|msclock:cl1|cout      ; game:g1|msclock:cl1|cout      ; 351      ; 0        ; 0        ; 0        ;
+; vgaSync:vs1|clkdiv25:cd0|cout ; vgaSync:vs1|clkdiv25:cd0|cout ; 378      ; 0        ; 0        ; 0        ;
+; vgaSync:vs1|hcounter[0]       ; vgaSync:vs1|clkdiv25:cd0|cout ; 10       ; 10       ; 0        ; 0        ;
+; vgaSync:vs1|clkdiv25:cd0|cout ; vgaSync:vs1|hcounter[0]       ; 0        ; 0        ; 3278     ; 0        ;
+; vgaSync:vs1|hcounter[0]       ; vgaSync:vs1|hcounter[0]       ; 0        ; 0        ; 131      ; 131      ;
 +-------------------------------+-------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -609,17 +628,20 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; game:g1|msclock:cl1|cout      ; game:g1|change[6]             ; 2        ; 0        ; 0        ; 0        ;
 ; game:g1|msclock:cl1|cout      ; game:g1|change[7]             ; 2        ; 0        ; 0        ; 0        ;
 ; game:g1|msclock:cl1|cout      ; game:g1|change[8]             ; 2        ; 0        ; 0        ; 0        ;
-; game:g1|change[0]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[1]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[2]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[3]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[4]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[5]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[6]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[7]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|change[8]             ; game:g1|msclock:cl1|cout      ; 20       ; 0        ; 0        ; 0        ;
-; game:g1|msclock:cl1|cout      ; game:g1|msclock:cl1|cout      ; 36       ; 0        ; 0        ; 0        ;
-; vgaSync:vs1|clkdiv25:cd0|cout ; vgaSync:vs1|clkdiv25:cd0|cout ; 390      ; 0        ; 0        ; 0        ;
+; game:g1|change[0]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|change[1]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|change[2]             ; game:g1|msclock:cl1|cout      ; 64       ; 0        ; 0        ; 0        ;
+; game:g1|change[3]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|change[4]             ; game:g1|msclock:cl1|cout      ; 40       ; 0        ; 0        ; 0        ;
+; game:g1|change[5]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|change[6]             ; game:g1|msclock:cl1|cout      ; 64       ; 0        ; 0        ; 0        ;
+; game:g1|change[7]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|change[8]             ; game:g1|msclock:cl1|cout      ; 52       ; 0        ; 0        ; 0        ;
+; game:g1|msclock:cl1|cout      ; game:g1|msclock:cl1|cout      ; 351      ; 0        ; 0        ; 0        ;
+; vgaSync:vs1|clkdiv25:cd0|cout ; vgaSync:vs1|clkdiv25:cd0|cout ; 378      ; 0        ; 0        ; 0        ;
+; vgaSync:vs1|hcounter[0]       ; vgaSync:vs1|clkdiv25:cd0|cout ; 10       ; 10       ; 0        ; 0        ;
+; vgaSync:vs1|clkdiv25:cd0|cout ; vgaSync:vs1|hcounter[0]       ; 0        ; 0        ; 3278     ; 0        ;
+; vgaSync:vs1|hcounter[0]       ; vgaSync:vs1|hcounter[0]       ; 0        ; 0        ; 131      ; 131      ;
 +-------------------------------+-------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -644,9 +666,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 11    ; 11   ;
-; Unconstrained Input Port Paths  ; 266   ; 266  ;
-; Unconstrained Output Ports      ; 20    ; 20   ;
-; Unconstrained Output Port Paths ; 588   ; 588  ;
+; Unconstrained Input Port Paths  ; 314   ; 314  ;
+; Unconstrained Output Ports      ; 21    ; 21   ;
+; Unconstrained Output Port Paths ; 734   ; 734  ;
 +---------------------------------+-------+------+
 
 
@@ -667,6 +689,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; game:g1|change[8]             ; game:g1|change[8]             ; Base ; Constrained ;
 ; game:g1|msclock:cl1|cout      ; game:g1|msclock:cl1|cout      ; Base ; Constrained ;
 ; vgaSync:vs1|clkdiv25:cd0|cout ; vgaSync:vs1|clkdiv25:cd0|cout ; Base ; Constrained ;
+; vgaSync:vs1|hcounter[0]       ; vgaSync:vs1|hcounter[0]       ; Base ; Constrained ;
 +-------------------------------+-------------------------------+------+-------------+
 
 
@@ -712,6 +735,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; ssd[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; ssd[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; ssd[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ssd[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; ssd[6]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; vsync       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -759,6 +783,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; ssd[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; ssd[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; ssd[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ssd[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; ssd[6]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; vsync       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -770,72 +795,77 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 Patches 0.02i SJ Lite Edition
-    Info: Processing started: Thu Apr 07 10:31:56 2022
+    Info: Processing started: Fri Apr 08 00:08:02 2022
 Info: Command: quartus_sta project -c project
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Warning (335093): The Timing Analyzer is analyzing 11 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'project.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name vgaSync:vs1|clkdiv25:cd0|cout vgaSync:vs1|clkdiv25:cd0|cout
     Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name vgaSync:vs1|hcounter[0] vgaSync:vs1|hcounter[0]
     Info (332105): create_clock -period 1.000 -name game:g1|msclock:cl1|cout game:g1|msclock:cl1|cout
-    Info (332105): create_clock -period 1.000 -name game:g1|change[6] game:g1|change[6]
-    Info (332105): create_clock -period 1.000 -name game:g1|change[7] game:g1|change[7]
+    Info (332105): create_clock -period 1.000 -name game:g1|change[2] game:g1|change[2]
     Info (332105): create_clock -period 1.000 -name game:g1|change[8] game:g1|change[8]
+    Info (332105): create_clock -period 1.000 -name game:g1|change[7] game:g1|change[7]
     Info (332105): create_clock -period 1.000 -name game:g1|change[5] game:g1|change[5]
-    Info (332105): create_clock -period 1.000 -name game:g1|change[4] game:g1|change[4]
-    Info (332105): create_clock -period 1.000 -name game:g1|change[0] game:g1|change[0]
+    Info (332105): create_clock -period 1.000 -name game:g1|change[6] game:g1|change[6]
     Info (332105): create_clock -period 1.000 -name game:g1|change[1] game:g1|change[1]
     Info (332105): create_clock -period 1.000 -name game:g1|change[3] game:g1|change[3]
-    Info (332105): create_clock -period 1.000 -name game:g1|change[2] game:g1|change[2]
+    Info (332105): create_clock -period 1.000 -name game:g1|change[0] game:g1|change[0]
+    Info (332105): create_clock -period 1.000 -name game:g1|change[4] game:g1|change[4]
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.586
+Info (332146): Worst-case setup slack is -8.573
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.586             -89.176 clk 
-    Info (332119):    -2.791             -30.632 game:g1|msclock:cl1|cout 
-    Info (332119):    -1.335             -28.044 vgaSync:vs1|clkdiv25:cd0|cout 
-    Info (332119):    -1.120              -2.221 game:g1|change[4] 
-    Info (332119):    -1.113              -2.224 game:g1|change[5] 
-    Info (332119):    -0.886              -1.649 game:g1|change[7] 
-    Info (332119):    -0.833              -1.502 game:g1|change[0] 
-    Info (332119):    -0.705              -1.404 game:g1|change[1] 
-    Info (332119):    -0.344              -0.496 game:g1|change[8] 
-    Info (332119):    -0.311              -0.466 game:g1|change[2] 
-    Info (332119):    -0.204              -0.384 game:g1|change[6] 
-    Info (332119):     0.028               0.000 game:g1|change[3] 
-Info (332146): Worst-case hold slack is 0.328
+    Info (332119):    -8.573             -84.010 vgaSync:vs1|hcounter[0] 
+    Info (332119):    -4.397             -66.937 vgaSync:vs1|clkdiv25:cd0|cout 
+    Info (332119):    -4.094             -63.399 game:g1|msclock:cl1|cout 
+    Info (332119):    -3.581             -81.965 clk 
+    Info (332119):    -0.723              -1.354 game:g1|change[7] 
+    Info (332119):    -0.608              -1.127 game:g1|change[6] 
+    Info (332119):    -0.567              -1.044 game:g1|change[4] 
+    Info (332119):    -0.530              -0.824 game:g1|change[3] 
+    Info (332119):    -0.504              -0.908 game:g1|change[5] 
+    Info (332119):    -0.495              -0.954 game:g1|change[8] 
+    Info (332119):    -0.446              -0.870 game:g1|change[0] 
+    Info (332119):    -0.418              -0.834 game:g1|change[1] 
+    Info (332119):    -0.164              -0.172 game:g1|change[2] 
+Info (332146): Worst-case hold slack is -0.295
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.328               0.000 game:g1|change[3] 
+    Info (332119):    -0.295              -0.890 vgaSync:vs1|hcounter[0] 
     Info (332119):     0.330               0.000 game:g1|msclock:cl1|cout 
-    Info (332119):     0.382               0.000 vgaSync:vs1|clkdiv25:cd0|cout 
-    Info (332119):     0.492               0.000 game:g1|change[8] 
-    Info (332119):     0.512               0.000 game:g1|change[6] 
-    Info (332119):     0.515               0.000 game:g1|change[2] 
-    Info (332119):     0.548               0.000 clk 
-    Info (332119):     1.062               0.000 game:g1|change[0] 
-    Info (332119):     1.092               0.000 game:g1|change[1] 
-    Info (332119):     1.161               0.000 game:g1|change[7] 
-    Info (332119):     1.471               0.000 game:g1|change[4] 
-    Info (332119):     1.493               0.000 game:g1|change[5] 
+    Info (332119):     0.431               0.000 game:g1|change[2] 
+    Info (332119):     0.546               0.000 clk 
+    Info (332119):     0.584               0.000 vgaSync:vs1|clkdiv25:cd0|cout 
+    Info (332119):     0.697               0.000 game:g1|change[3] 
+    Info (332119):     0.730               0.000 game:g1|change[4] 
+    Info (332119):     0.750               0.000 game:g1|change[0] 
+    Info (332119):     0.775               0.000 game:g1|change[6] 
+    Info (332119):     0.829               0.000 game:g1|change[1] 
+    Info (332119):     0.837               0.000 game:g1|change[5] 
+    Info (332119):     0.889               0.000 game:g1|change[8] 
+    Info (332119):     1.013               0.000 game:g1|change[7] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -3.000
+Info (332146): Worst-case minimum pulse width slack is -3.314
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
+    Info (332119):    -3.314            -171.901 vgaSync:vs1|hcounter[0] 
     Info (332119):    -3.000             -44.548 clk 
     Info (332119):    -1.222             -28.106 vgaSync:vs1|clkdiv25:cd0|cout 
-    Info (332119):    -1.222             -15.886 game:g1|msclock:cl1|cout 
+    Info (332119):    -1.222             -23.218 game:g1|msclock:cl1|cout 
     Info (332119):    -1.222              -2.444 game:g1|change[0] 
     Info (332119):    -1.222              -2.444 game:g1|change[1] 
     Info (332119):    -1.222              -2.444 game:g1|change[2] 
@@ -851,44 +881,47 @@ Warning (334000): Timing characteristics of device 10M50DAF484C6GES are prelimin
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.223
+Info (332146): Worst-case setup slack is -7.812
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.223             -79.474 clk 
-    Info (332119):    -2.514             -27.428 game:g1|msclock:cl1|cout 
-    Info (332119):    -1.151             -24.065 vgaSync:vs1|clkdiv25:cd0|cout 
-    Info (332119):    -0.927              -1.832 game:g1|change[4] 
-    Info (332119):    -0.924              -1.847 game:g1|change[5] 
-    Info (332119):    -0.727              -1.340 game:g1|change[7] 
-    Info (332119):    -0.680              -1.206 game:g1|change[0] 
-    Info (332119):    -0.545              -1.084 game:g1|change[1] 
-    Info (332119):    -0.207              -0.238 game:g1|change[8] 
-    Info (332119):    -0.186              -0.233 game:g1|change[2] 
-    Info (332119):    -0.075              -0.126 game:g1|change[6] 
-    Info (332119):     0.123               0.000 game:g1|change[3] 
-Info (332146): Worst-case hold slack is 0.299
+    Info (332119):    -7.812             -76.518 vgaSync:vs1|hcounter[0] 
+    Info (332119):    -3.900             -59.133 vgaSync:vs1|clkdiv25:cd0|cout 
+    Info (332119):    -3.649             -56.880 game:g1|msclock:cl1|cout 
+    Info (332119):    -3.219             -72.840 clk 
+    Info (332119):    -0.544              -1.008 game:g1|change[7] 
+    Info (332119):    -0.437              -0.789 game:g1|change[6] 
+    Info (332119):    -0.394              -0.701 game:g1|change[4] 
+    Info (332119):    -0.388              -0.563 game:g1|change[3] 
+    Info (332119):    -0.375              -0.655 game:g1|change[5] 
+    Info (332119):    -0.366              -0.698 game:g1|change[8] 
+    Info (332119):    -0.293              -0.550 game:g1|change[0] 
+    Info (332119):    -0.288              -0.572 game:g1|change[1] 
+    Info (332119):    -0.066              -0.066 game:g1|change[2] 
+Info (332146): Worst-case hold slack is -0.214
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
+    Info (332119):    -0.214              -0.546 vgaSync:vs1|hcounter[0] 
     Info (332119):     0.299               0.000 game:g1|msclock:cl1|cout 
-    Info (332119):     0.303               0.000 game:g1|change[3] 
-    Info (332119):     0.350               0.000 vgaSync:vs1|clkdiv25:cd0|cout 
-    Info (332119):     0.447               0.000 game:g1|change[8] 
-    Info (332119):     0.463               0.000 game:g1|change[6] 
-    Info (332119):     0.464               0.000 game:g1|change[2] 
-    Info (332119):     0.504               0.000 clk 
-    Info (332119):     0.972               0.000 game:g1|change[0] 
-    Info (332119):     1.000               0.000 game:g1|change[1] 
-    Info (332119):     1.067               0.000 game:g1|change[7] 
-    Info (332119):     1.352               0.000 game:g1|change[4] 
-    Info (332119):     1.376               0.000 game:g1|change[5] 
+    Info (332119):     0.391               0.000 game:g1|change[2] 
+    Info (332119):     0.503               0.000 clk 
+    Info (332119):     0.538               0.000 vgaSync:vs1|clkdiv25:cd0|cout 
+    Info (332119):     0.647               0.000 game:g1|change[3] 
+    Info (332119):     0.666               0.000 game:g1|change[4] 
+    Info (332119):     0.699               0.000 game:g1|change[0] 
+    Info (332119):     0.714               0.000 game:g1|change[6] 
+    Info (332119):     0.769               0.000 game:g1|change[1] 
+    Info (332119):     0.784               0.000 game:g1|change[5] 
+    Info (332119):     0.822               0.000 game:g1|change[8] 
+    Info (332119):     0.933               0.000 game:g1|change[7] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -44.548 clk 
+    Info (332119):    -2.922            -153.322 vgaSync:vs1|hcounter[0] 
     Info (332119):    -1.222             -28.106 vgaSync:vs1|clkdiv25:cd0|cout 
-    Info (332119):    -1.222             -15.886 game:g1|msclock:cl1|cout 
+    Info (332119):    -1.222             -23.218 game:g1|msclock:cl1|cout 
     Info (332119):    -1.222              -2.444 game:g1|change[0] 
     Info (332119):    -1.222              -2.444 game:g1|change[1] 
     Info (332119):    -1.222              -2.444 game:g1|change[2] 
@@ -901,44 +934,47 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.234
+Info (332146): Worst-case setup slack is -3.896
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.234             -24.324 clk 
-    Info (332119):    -0.818              -8.501 game:g1|msclock:cl1|cout 
-    Info (332119):    -0.090              -0.960 vgaSync:vs1|clkdiv25:cd0|cout 
-    Info (332119):    -0.066              -0.123 game:g1|change[5] 
-    Info (332119):    -0.060              -0.103 game:g1|change[4] 
-    Info (332119):     0.071               0.000 game:g1|change[7] 
-    Info (332119):     0.111               0.000 game:g1|change[0] 
-    Info (332119):     0.153               0.000 game:g1|change[1] 
-    Info (332119):     0.334               0.000 game:g1|change[2] 
-    Info (332119):     0.354               0.000 game:g1|change[8] 
-    Info (332119):     0.397               0.000 game:g1|change[6] 
-    Info (332119):     0.548               0.000 game:g1|change[3] 
-Info (332146): Worst-case hold slack is 0.105
+    Info (332119):    -3.896             -38.529 vgaSync:vs1|hcounter[0] 
+    Info (332119):    -1.648             -20.321 vgaSync:vs1|clkdiv25:cd0|cout 
+    Info (332119):    -1.441             -20.640 game:g1|msclock:cl1|cout 
+    Info (332119):    -1.265             -21.281 clk 
+    Info (332119):     0.125               0.000 game:g1|change[7] 
+    Info (332119):     0.160               0.000 game:g1|change[6] 
+    Info (332119):     0.166               0.000 game:g1|change[4] 
+    Info (332119):     0.238               0.000 game:g1|change[3] 
+    Info (332119):     0.258               0.000 game:g1|change[0] 
+    Info (332119):     0.262               0.000 game:g1|change[5] 
+    Info (332119):     0.280               0.000 game:g1|change[8] 
+    Info (332119):     0.295               0.000 game:g1|change[1] 
+    Info (332119):     0.449               0.000 game:g1|change[2] 
+Info (332146): Worst-case hold slack is -0.373
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.105               0.000 game:g1|change[3] 
+    Info (332119):    -0.373              -0.373 vgaSync:vs1|hcounter[0] 
     Info (332119):     0.152               0.000 game:g1|msclock:cl1|cout 
-    Info (332119):     0.175               0.000 vgaSync:vs1|clkdiv25:cd0|cout 
-    Info (332119):     0.196               0.000 game:g1|change[8] 
-    Info (332119):     0.211               0.000 game:g1|change[6] 
-    Info (332119):     0.237               0.000 game:g1|change[2] 
-    Info (332119):     0.248               0.000 clk 
-    Info (332119):     0.507               0.000 game:g1|change[0] 
-    Info (332119):     0.510               0.000 game:g1|change[1] 
-    Info (332119):     0.539               0.000 game:g1|change[7] 
-    Info (332119):     0.688               0.000 game:g1|change[4] 
-    Info (332119):     0.710               0.000 game:g1|change[5] 
+    Info (332119):     0.193               0.000 game:g1|change[2] 
+    Info (332119):     0.246               0.000 clk 
+    Info (332119):     0.266               0.000 vgaSync:vs1|clkdiv25:cd0|cout 
+    Info (332119):     0.306               0.000 game:g1|change[4] 
+    Info (332119):     0.307               0.000 game:g1|change[0] 
+    Info (332119):     0.312               0.000 game:g1|change[6] 
+    Info (332119):     0.326               0.000 game:g1|change[3] 
+    Info (332119):     0.367               0.000 game:g1|change[5] 
+    Info (332119):     0.375               0.000 game:g1|change[1] 
+    Info (332119):     0.384               0.000 game:g1|change[8] 
+    Info (332119):     0.395               0.000 game:g1|change[7] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -38.158 clk 
+    Info (332119):    -3.000             -38.009 clk 
+    Info (332119):    -1.420             -67.004 vgaSync:vs1|hcounter[0] 
     Info (332119):    -1.000             -23.000 vgaSync:vs1|clkdiv25:cd0|cout 
-    Info (332119):    -1.000             -13.000 game:g1|msclock:cl1|cout 
+    Info (332119):    -1.000             -19.000 game:g1|msclock:cl1|cout 
     Info (332119):    -1.000              -2.000 game:g1|change[0] 
     Info (332119):    -1.000              -2.000 game:g1|change[1] 
     Info (332119):    -1.000              -2.000 game:g1|change[2] 
@@ -950,10 +986,10 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):    -1.000              -2.000 game:g1|change[8] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4824 megabytes
-    Info: Processing ended: Thu Apr 07 10:32:00 2022
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4823 megabytes
+    Info: Processing ended: Fri Apr 08 00:08:04 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 

@@ -24,6 +24,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "ssd[5]",
+					"strict" : false
+				},
+				{
 					"name" : "ssd[6]",
 					"strict" : false
 				},
@@ -84,11 +88,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[2]",
+					"name" : "switches[3]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[5]",
+					"name" : "switches[2]",
 					"strict" : false
 				},
 				{
@@ -96,7 +100,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[7]",
+					"name" : "switches[5]",
 					"strict" : false
 				},
 				{
@@ -108,11 +112,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[3]",
+					"name" : "switches[4]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[4]",
+					"name" : "switches[7]",
 					"strict" : false
 				},
 				{

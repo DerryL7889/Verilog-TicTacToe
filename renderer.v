@@ -1,6 +1,7 @@
 module renderer(input rst, input[9:0] x, input[9:0] y, input[9:0] lx, input[9:0] ly, input render, input[1:0] mode, input highlight, input blanking, output[11:0] rgb);
 
     reg[3:0] red, blue, green;
+    wire[7:0] x_sprite, o_sprite;
 
     always@(x,y) begin
         //display
@@ -8,27 +9,30 @@ module renderer(input rst, input[9:0] x, input[9:0] y, input[9:0] lx, input[9:0]
             if(render)begin
                 if(mode == 2'b01)begin
                     //x
-                    red = 4'b1111;
-                    green = 4'b0000;
-                    blue = 4'b0000;
+						  if(x_sprite == 4'b0000) begin
+                        red = 4'b0000;
+							   green = 4'b0000;
+                        blue = 4'b0000;
+                    end
+						  else begin
+						      red = 4'b1111;
+                        green = 4'b1111;
+                        blue = 4'b1111;
+                    end
                 end
                 else if(mode == 2'b10)begin
                     //o
-                    red = 4'b0000;
-                    green = 4'b0000;
-                    blue = 4'b1111;
-                end
-					 else if(mode == 2'b00)begin
-                    //blank
-                    red = 4'b0000;
-                    green = 4'b0000;
-                    blue = 4'b0000;
-                end
-					 else if(mode == 2'b11)begin
-                    //invalid
-                    red = 4'b0000;
-                    green = 4'b1111;
-                    blue = 4'b0000;
+						  if(o_sprite == 4'b0000) begin
+                        red = 4'b0000;
+							   green = 4'b0000;
+                        blue = 4'b0000;
+                    end
+						  else begin
+						      red = 4'b1111;
+                        green = 4'b1111;
+                        blue = 4'b1111;
+                    end
+
                 end
                 else begin
                     red = 4'b0000;
@@ -41,9 +45,6 @@ module renderer(input rst, input[9:0] x, input[9:0] y, input[9:0] lx, input[9:0]
                     red = ~red;
                     green = ~green;
                     blue = ~blue;
-//							red = lx/8;
-//							green = ly/8;
-//							blue = 4'b0000;
                 end
             end
             else begin
@@ -59,6 +60,9 @@ module renderer(input rst, input[9:0] x, input[9:0] y, input[9:0] lx, input[9:0]
             blue = 4'b0000;
         end
     end
+
+    sprite_rom #(.FILE("./sprites/sprite_x.mem")) sp1(lx/8 , ly/8, x_sprite);
+	 sprite_rom #(.FILE("./sprites/test_sprite.mem")) sp2(lx/8 , ly/8, o_sprite);
 
     assign rgb = {red,green,blue};
 

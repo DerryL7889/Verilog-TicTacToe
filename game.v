@@ -1,8 +1,9 @@
 module game(input clk, input rst, input button, input[8:0] switches, input[9:0] x, input[9:0]y, 
-    output[9:0] lx, output[9:0] ly, output[1:0] mode, output square, output highlight, output[1:0] turn);
+    output[9:0] lx, output[9:0] ly, output[1:0] mode, output square, output highlight, output[1:0] turn, output[1:0] game_state);
 
     reg sig, valid;
-	reg [1:0] state, flag, curr_mode;
+	reg [1:0] state, playing, flag, curr_mode;
+	reg [3:0] moves;
     reg [8:0] select, change;
     reg [9:0] curr_lx, curr_ly;
 	wire clock;
@@ -38,8 +39,8 @@ module game(input clk, input rst, input button, input[8:0] switches, input[9:0] 
         for(i=0; i<9; i=i+1) begin
             if(render[i])begin
                 curr_mode = {modes[2*i + 1],modes[2*i]};
-                curr_lx = lx_arr[i];
-                curr_ly = ly_arr[i];
+                curr_lx <= lx_arr[i];
+                curr_ly <= ly_arr[i];
             end
         end
     end
@@ -47,12 +48,14 @@ module game(input clk, input rst, input button, input[8:0] switches, input[9:0] 
     always@(posedge clock, negedge rst) begin
         if(~rst)begin
             //reset
+				playing <= 2'b00; //0 = playing, 1 = current player wins, 2 = tie
+				moves <= 4'b000;
             sig <= 1'b0;
             state <= 2'b01; //player 1 is x
             valid <= 1'b1;
             change <= 9'b000000000;
         end 
-        else if(~button & ~sig) begin
+        else if(~button & ~sig & game_state == 2'b00) begin
             //button
             sig <= 1'b1;
             if(|select) begin
@@ -66,7 +69,8 @@ module game(input clk, input rst, input button, input[8:0] switches, input[9:0] 
                 
                 if(valid) begin
                 //place marker
-                        change = select;
+                        change <= select;
+								moves <= moves + 1;
                     end
             end
         end
@@ -74,9 +78,27 @@ module game(input clk, input rst, input button, input[8:0] switches, input[9:0] 
             sig <= 1'b0;
             change <= 9'b000000000;
             if(valid) begin
-                    //TODO: check for win
+                    //check for win
+                    if(//horizontal
+                        (modes[1:0] == state & modes[3:2] == state & modes[5:4] == state) |
+                        (modes[7:6] == state & modes[9:8] == state & modes[11:10] == state) |
+                        (modes[13:12] == state & modes[15:14] == state & modes[17:16] == state) |
+                    //vertical
+                        (modes[1:0] == state & modes[7:6] == state & modes[13:12] == state) |
+                        (modes[3:2] == state & modes[9:8] == state & modes[15:14] == state) |
+                        (modes[5:4] == state & modes[11:10] == state & modes[17:16] == state) |
+                    //diagonal
+                        (modes[1:0] == state & modes[9:8] == state & modes[17:16] == state) |
+                        (modes[5:4] == state & modes[9:8] == state & modes[13:12] == state)
+                    )begin
+                        playing <= 2'b01;
+                    end
+						  //check for tie
+						  else if(moves >= 4'b1001) begin
+                        playing <= 2'b10;
+                    end
                     //pass turn
-                        if(state == 2'b01) begin
+                    else if(state == 2'b01) begin
                         state <= 2'b10;
                     end
                     else if(state == 2'b10) begin
@@ -110,6 +132,7 @@ module game(input clk, input rst, input button, input[8:0] switches, input[9:0] 
     assign lx = curr_lx;
     assign ly = curr_ly;
     assign turn = state;
+	 assign game_state = playing;
 
 
 endmodule
