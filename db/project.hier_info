@@ -11,27 +11,55 @@ switches[6] => switches[6].IN1
 switches[7] => switches[7].IN1
 switches[8] => switches[8].IN1
 clk => clk.IN2
-ssd[0] << SSDriver:ssd1.port2
-ssd[1] << SSDriver:ssd1.port2
-ssd[2] << SSDriver:ssd1.port2
-ssd[3] << SSDriver:ssd1.port2
-ssd[4] << SSDriver:ssd1.port2
-ssd[5] << SSDriver:ssd1.port2
-ssd[6] << SSDriver:ssd1.port2
-rgb[0] << renderer:r1.port9
-rgb[1] << renderer:r1.port9
-rgb[2] << renderer:r1.port9
-rgb[3] << renderer:r1.port9
-rgb[4] << renderer:r1.port9
-rgb[5] << renderer:r1.port9
-rgb[6] << renderer:r1.port9
-rgb[7] << renderer:r1.port9
-rgb[8] << renderer:r1.port9
-rgb[9] << renderer:r1.port9
-rgb[10] << renderer:r1.port9
-rgb[11] << renderer:r1.port9
-hsync << vgaSync:vs1.port5
-vsync << vgaSync:vs1.port6
+ssd[0] <= SSDriver:ssdd0.port2
+ssd[1] <= SSDriver:ssdd0.port2
+ssd[2] <= SSDriver:ssdd0.port2
+ssd[3] <= SSDriver:ssdd0.port2
+ssd[4] <= SSDriver:ssdd0.port2
+ssd[5] <= SSDriver:ssdd0.port2
+ssd[6] <= SSDriver:ssdd0.port2
+ssd1[0] <= <VCC>
+ssd1[1] <= <VCC>
+ssd1[2] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+ssd1[3] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+ssd1[4] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+ssd1[5] <= <VCC>
+ssd1[6] <= <VCC>
+ssd2[0] <= ssd2.DB_MAX_OUTPUT_PORT_TYPE
+ssd2[1] <= ssd2.DB_MAX_OUTPUT_PORT_TYPE
+ssd2[2] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+ssd2[3] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+ssd2[4] <= ssd2.DB_MAX_OUTPUT_PORT_TYPE
+ssd2[5] <= <VCC>
+ssd2[6] <= <VCC>
+ssd3[0] <= <VCC>
+ssd3[1] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+ssd3[2] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+ssd3[3] <= <VCC>
+ssd3[4] <= <VCC>
+ssd3[5] <= <VCC>
+ssd3[6] <= <VCC>
+ssd4[0] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+ssd4[1] <= ssd4.DB_MAX_OUTPUT_PORT_TYPE
+ssd4[2] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+ssd4[3] <= ssd4.DB_MAX_OUTPUT_PORT_TYPE
+ssd4[4] <= ssd4.DB_MAX_OUTPUT_PORT_TYPE
+ssd4[5] <= <VCC>
+ssd4[6] <= ssd4.DB_MAX_OUTPUT_PORT_TYPE
+rgb[0] <= renderer:r1.port9
+rgb[1] <= renderer:r1.port9
+rgb[2] <= renderer:r1.port9
+rgb[3] <= renderer:r1.port9
+rgb[4] <= renderer:r1.port9
+rgb[5] <= renderer:r1.port9
+rgb[6] <= renderer:r1.port9
+rgb[7] <= renderer:r1.port9
+rgb[8] <= renderer:r1.port9
+rgb[9] <= renderer:r1.port9
+rgb[10] <= renderer:r1.port9
+rgb[11] <= renderer:r1.port9
+hsync <= vgaSync:vs1.port5
+vsync <= vgaSync:vs1.port6
 
 
 |top|vgaSync:vs1
@@ -1554,7 +1582,7 @@ mode[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
 mode[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|SSDriver:ssd1
+|top|SSDriver:ssdd0
 a[3] => b.IN1
 a[3] => b.IN1
 a[3] => b.IN1

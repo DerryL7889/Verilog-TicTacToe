@@ -86,11 +86,11 @@ switches[6]                  : A13       : input  : 2.5 V             :         
 switches[7]                  : A14       : input  : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A15       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A16       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A17       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A18       :        :                   :         : 7         :                
+ssd4[2]                      : A17       : output : 2.5 V             :         : 7         : Y              
+ssd4[1]                      : A18       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A19       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A20       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A21       :        :                   :         : 6         :                
+ssd3[5]                      : A20       : output : 2.5 V             :         : 7         : Y              
+ssd3[3]                      : A21       : output : 2.5 V             :         : 6         : Y              
 GND                          : A22       : gnd    :                   :         :           :                
 rgb[8]                       : AA1       : output : 2.5 V             :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA2       :        :                   :         : 3         :                
@@ -151,13 +151,13 @@ switches[5]                  : B12       : input  : 2.5 V             :         
 GND                          : B13       : gnd    :                   :         :           :                
 switches[8]                  : B14       : input  : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B15       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B16       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B17       :        :                   :         : 7         :                
+ssd4[3]                      : B16       : output : 2.5 V             :         : 7         : Y              
+ssd4[0]                      : B17       : output : 2.5 V             :         : 7         : Y              
 GND                          : B18       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B19       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B20       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B21       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B22       :        :                   :         : 6         :                
+ssd3[4]                      : B19       : output : 2.5 V             :         : 7         : Y              
+ssd3[6]                      : B20       : output : 2.5 V             :         : 6         : Y              
+ssd3[2]                      : B21       : output : 2.5 V             :         : 6         : Y              
+ssd3[0]                      : B22       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C1        :        :                   :         : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C2        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8         :                
@@ -175,11 +175,11 @@ ssd[6]                       : C14       : output : 2.5 V             :         
 ssd[4]                       : C15       : output : 2.5 V             :         : 7         : Y              
 ssd[3]                       : C16       : output : 2.5 V             :         : 7         : Y              
 ssd[0]                       : C17       : output : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C18       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C19       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C20       :        :                   :         : 6         :                
+ssd4[6]                      : C18       : output : 2.5 V             :         : 7         : Y              
+ssd2[3]                      : C19       : output : 2.5 V             :         : 7         : Y              
+ssd2[2]                      : C20       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C21       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C22       :        :                   :         : 6         :                
+ssd3[1]                      : C22       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 1B        :                
@@ -197,8 +197,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 7         :                
 GND                          : D16       : gnd    :                   :         :           :                
 ssd[1]                       : D17       : output : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D18       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D19       :        :                   :         : 6         :                
+ssd4[5]                      : D18       : output : 2.5 V             :         : 6         : Y              
+ssd2[1]                      : D19       : output : 2.5 V             :         : 6         : Y              
 GND                          : D20       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D21       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 6         :                
@@ -218,12 +218,12 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : E13       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : E14       :        :                   :         : 7         :                
 ssd[5]                       : E15       : output : 2.5 V             :         : 7         : Y              
 ssd[2]                       : E16       : output : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E17       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E18       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E19       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E20       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E21       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E22       :        :                   :         : 6         :                
+ssd2[0]                      : E17       : output : 2.5 V             :         : 6         : Y              
+ssd4[4]                      : E18       : output : 2.5 V             :         : 6         : Y              
+ssd1[4]                      : E19       : output : 2.5 V             :         : 6         : Y              
+ssd1[5]                      : E20       : output : 2.5 V             :         : 6         : Y              
+ssd2[4]                      : E21       : output : 2.5 V             :         : 6         : Y              
+ssd2[5]                      : E22       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F1        :        :                   :         : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F2        :        :                   :         : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :         : 1A        :                
@@ -241,10 +241,10 @@ VCCIO7                       : F14       : power  :                   : 2.5V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : F15       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F16       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F17       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F18       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F20       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F21       :        :                   :         : 6         :                
+ssd1[6]                      : F18       : output : 2.5 V             :         : 6         : Y              
+ssd1[1]                      : F19       : output : 2.5 V             :         : 6         : Y              
+ssd1[0]                      : F20       : output : 2.5 V             :         : 6         : Y              
+ssd2[6]                      : F21       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F22       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1B        :                
 ~ALTERA_TCK~ / RESERVED_INPUT : G2        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
@@ -286,7 +286,7 @@ VCCA2                        : H15       : power  :                   : 2.5V    
 VCCIO6                       : H16       : power  :                   : 2.5V    : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H18       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H19       :        :                   :         : 6         :                
+ssd1[2]                      : H19       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H20       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H21       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H22       :        :                   :         : 6         :                
@@ -307,7 +307,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : J14       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : J15       :        :                   :         : 6         :                
 GND                          : J16       : gnd    :                   :         :           :                
 VCCIO6                       : J17       : power  :                   : 2.5V    : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J18       :        :                   :         : 6         :                
+ssd1[3]                      : J18       : output : 2.5 V             :         : 6         : Y              
 GND                          : J19       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J20       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J21       :        :                   :         : 6         :                
