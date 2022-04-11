@@ -13,34 +13,31 @@ module top (input rst, input button, input[8:0] switches, input clk, //raw 50MHz
     game g1(clk, rst, button, switches, x, y, lx, ly, mode, render, highlight, turn, game_state);
 	 SSDriver ssdd0(turn, ~(game_state == 2'b10), ssd);
 	 
-	 assign ssd1 = (game_state == 2'b01) ? 8'b1100011 : 8'b11111111;
-	 assign ssd2 = (~(game_state == 2'b00)) ? ((game_state == 2'b10) ? 8'b1110000 : 8'b1100011) : 8'b11111111;
-	 assign ssd3 = (~(game_state == 2'b00)) ? 8'b1111001 : 8'b11111111;
-	 assign ssd4 = (~(game_state == 2'b00)) ? ((game_state == 2'b10) ? 8'b0110000 : 8'b1101010) : 8'b11111111;
+	 assign ssd1[6] = 1;
+	 assign ssd1[5] = (game_state == 2'b00) ^ (game_state == 2'b10);
+	 assign ssd1[4] = 1;
+	 assign ssd1[3] = (game_state == 2'b00);
+	 assign ssd1[2] = (game_state == 2'b00) ^ (game_state == 2'b01);
+	 assign ssd1[1] = (game_state == 2'b00);
+	 assign ssd1[0] = (game_state == 2'b00);
 	 
-//	 assign ssd2[6] = 1;
-//	 assign ssd2[5] = (game_state == 2'b00) ^ (game_state == 2'b10);
-//	 assign ssd2[4] = 1;
-//	 assign ssd2[3] = (game_state == 2'b00);
-//	 assign ssd2[2] = (game_state == 2'b00) ^ (game_state == 2'b01);
-//	 assign ssd2[1] = (game_state == 2'b00);
-//	 assign ssd2[0] = (game_state == 2'b00);
-//	 
-//	 assign ssd3[6] = 1;
-//	 assign ssd3[5] = 1;
-//	 assign ssd3[4] = 1;
-//	 assign ssd3[3] = 1;
-//	 assign ssd3[2] = (game_state == 2'b00);
-//	 assign ssd3[1] = (game_state == 2'b00);
-//	 assign ssd3[0] = 1;
-//	
-//	 assign ssd4[6] = (game_state == 2'b00) ^ (game_state == 2'b01);
-//	 assign ssd4[5] = 1;
-//	 assign ssd4[4] = 1(game_state == 2'b00) ^ (game_state == 2'b10);
-//	 assign ssd4[3] = (game_state == 2'b00) ^ (game_state == 2'b01);
-//	 assign ssd4[2] = (game_state == 2'b00);
-//	 assign ssd4[1] = (game_state == 2'b00) ^ (game_state == 2'b01);
-//	 assign ssd4[0] = (game_state == 2'b00);
+	 assign ssd2[6] = 1;
+	 assign ssd2[5] = 1;
+	 assign ssd2[4] = 1;
+	 assign ssd2[3] = 1;
+	 assign ssd2[2] = (game_state == 2'b00);
+	 assign ssd2[1] = (game_state == 2'b00);
+	 assign ssd2[0] = 1;
+	
+	 assign ssd3[6] = (game_state == 2'b00) ^ (game_state == 2'b01);
+	 assign ssd3[5] = 1;
+	 assign ssd3[4] = (game_state == 2'b00) ^ (game_state == 2'b10);
+	 assign ssd3[3] = (game_state == 2'b00) ^ (game_state == 2'b01);
+	 assign ssd3[2] = (game_state == 2'b00);
+	 assign ssd3[1] = (game_state == 2'b00) ^ (game_state == 2'b01);
+	 assign ssd3[0] = (game_state == 2'b00);
+	 
+	 assign ssd4 = 8'b11111111;
 	 
     //render module
     renderer r1(rst, x, y, lx, ly, render, mode, highlight, blank, rgb);
